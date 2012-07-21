@@ -1,0 +1,7 @@
+<DumperConfig>
+	<Hostname>78.46.146.153</Hostname>
+	<Database>GW-Dump</Database>
+	<User>dumper</User>
+	<Password></Password>
+	<Port>3306</Port>
+</DumperConfig>

@@ -1,0 +1,60 @@
+<EncryptConnection>0</EncryptConnection>
+
+<MultiClient>
+	<Enable>1</Enable>
+	<UnlockGwDat>1</UnlockGwDat>
+</MultiClient>
+
+<FileServer Id = 1>
+	<Hostname>file1.arenanetworks.com</Hostname>
+	<Port>6112</Port>
+</FileServer>
+<FileServer Id = 2>
+	<Hostname>file2.arenanetworks.com</Hostname>
+	<Port>6112</Port>
+</FileServer>
+<FileServer Id = 3>
+	<Hostname>file3.arenanetworks.com</Hostname>
+	<Port>6112</Port>
+</FileServer>
+<FileServer Id = 4>
+	<Hostname>file4.arenanetworks.com</Hostname>
+	<Port>6112</Port>
+</FileServer>
+<FileServer Id = 5>
+	<Hostname>file5.arenanetworks.com</Hostname>
+	<Port>6112</Port>
+</FileServer>
+<FileServer Id = 6>
+	<Hostname>file6.arenanetworks.com</Hostname>
+	<Port>6112</Port>
+</FileServer>
+<FileServer Id = 7>
+	<Hostname>file7.arenanetworks.com</Hostname>
+	<Port>6112</Port>
+</FileServer>
+<FileServer Id = 8>
+	<Hostname>file8.arenanetworks.com</Hostname>
+	<Port>6112</Port>
+</FileServer>
+<FileServer Id = 9>
+	<Hostname>file9.arenanetworks.com</Hostname>
+	<Port>6112</Port>
+</FileServer>
+<FileServer Id = 10>
+	<Hostname>file10.arenanetworks.com</Hostname>
+	<Port>6112</Port>
+</FileServer>
+<FileServer Id = 11>
+	<Hostname>file11.arenanetworks.com</Hostname>
+	<Port>6112</Port>
+</FileServer>
+<FileServer Id = 12>
+	<Hostname>file12.arenanetworks.com</Hostname>
+	<Port>6112</Port>
+</FileServer>
+
+<LoginServer>
+	<Hostname>localhost</Hostname>
+	<Port>8112</Port>
+</LoginServer>

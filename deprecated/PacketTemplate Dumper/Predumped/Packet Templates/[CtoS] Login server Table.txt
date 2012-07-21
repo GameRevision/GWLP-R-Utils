@@ -1,0 +1,877 @@
+Table has 56 entries
+
+Packet 0x0000
+	TemplateSize: 2
+
+	Template: 0x00000000 0x00000404 
+
+	DecodedTemplate: 
+	struct Packet_0x0
+	{
+		const short Header = 0x0;		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+	}
+Packet 0x0001
+	TemplateSize: 3
+
+	Template: 0x00000001 0x00002017 0x00002017 
+
+	DecodedTemplate: 
+	struct Packet_0x1
+	{
+		const short Header = 0x1;		//Size in Packet: 4 bytes
+		//short string_length;	//MaxLength: 32		//Size in Packet: 4 bytes
+		wchar_t[32]		//Size in Packet: 2 * string_length bytes
+		//short string_length;	//MaxLength: 32		//Size in Packet: 4 bytes
+		wchar_t[32]		//Size in Packet: 2 * string_length bytes
+	}
+Packet 0x0002
+	TemplateSize: 3
+
+	Template: 0x00000002 0x00000404 0x00001005 
+
+	DecodedTemplate: 
+	struct Packet_0x2
+	{
+		const short Header = 0x2;		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		BYTE[16]		//Size in Packet: 16 bytes
+	}
+Packet 0x0003
+	TemplateSize: 5
+
+	Template: 0x00000003 0x00000404 0x00004017 0x00001409 
+		0x00001A17 
+
+	DecodedTemplate: 
+	struct Packet_0x3
+	{
+		const short Header = 0x3;		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		//short string_length;	//MaxLength: 64		//Size in Packet: 4 bytes
+		wchar_t[64]		//Size in Packet: 2 * string_length bytes
+		BYTE[20]		//Size in Packet: 20 bytes
+		//short string_length;	//MaxLength: 26		//Size in Packet: 4 bytes
+		wchar_t[26]		//Size in Packet: 2 * string_length bytes
+	}
+Packet 0x0004
+	TemplateSize: 7
+
+	Template: 0x00000004 0x00000404 0x00000404 0x00001409 
+		0x00004017 0x00001417 0x00001417 
+
+	DecodedTemplate: 
+	struct Packet_0x4
+	{
+		const short Header = 0x4;		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		BYTE[20]		//Size in Packet: 20 bytes
+		//short string_length;	//MaxLength: 64		//Size in Packet: 4 bytes
+		wchar_t[64]		//Size in Packet: 2 * string_length bytes
+		//short string_length;	//MaxLength: 20		//Size in Packet: 4 bytes
+		wchar_t[20]		//Size in Packet: 2 * string_length bytes
+		//short string_length;	//MaxLength: 20		//Size in Packet: 4 bytes
+		wchar_t[20]		//Size in Packet: 2 * string_length bytes
+	}
+Packet 0x0005
+	TemplateSize: 6
+
+	Template: 0x00000005 0x00000404 0x00000404 0x00001409 
+		0x00001409 0x00004017 
+
+	DecodedTemplate: 
+	struct Packet_0x5
+	{
+		const short Header = 0x5;		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		BYTE[20]		//Size in Packet: 20 bytes
+		BYTE[20]		//Size in Packet: 20 bytes
+		//short string_length;	//MaxLength: 64		//Size in Packet: 4 bytes
+		wchar_t[64]		//Size in Packet: 2 * string_length bytes
+	}
+Packet 0x0006
+	TemplateSize: 3
+
+	Template: 0x00000006 0x00000404 0x00000404 
+
+	DecodedTemplate: 
+	struct Packet_0x6
+	{
+		const short Header = 0x6;		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+	}
+Packet 0x0007
+	TemplateSize: 3
+
+	Template: 0x00000007 0x00000404 0x00001417 
+
+	DecodedTemplate: 
+	struct Packet_0x7
+	{
+		const short Header = 0x7;		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		//short string_length;	//MaxLength: 20		//Size in Packet: 4 bytes
+		wchar_t[20]		//Size in Packet: 2 * string_length bytes
+	}
+Packet 0x0008
+	TemplateSize: 3
+
+	Template: 0x00000008 0x00000404 0x00001417 
+
+	DecodedTemplate: 
+	struct Packet_0x8
+	{
+		const short Header = 0x8;		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		//short string_length;	//MaxLength: 20		//Size in Packet: 4 bytes
+		wchar_t[20]		//Size in Packet: 2 * string_length bytes
+	}
+Packet 0x0009
+	TemplateSize: 5
+
+	Template: 0x00000009 0x00000404 0x00001417 0x0000400B 
+		0x00000006 
+
+	DecodedTemplate: 
+	struct Packet_0x9
+	{
+		const short Header = 0x9;		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		//short string_length;	//MaxLength: 20		//Size in Packet: 4 bytes
+		wchar_t[20]		//Size in Packet: 2 * string_length bytes
+		short length;	//MaxLength: 64		//Size in Packet: 4 bytes
+		BYTE[length]	//MaxLength: 64		//Size in Packet: 1 * length bytes MaxSize in Packet: 64bytes
+	}
+Packet 0x000A
+	TemplateSize: 3
+
+	Template: 0x0000000A 0x00000404 0x00001417 
+
+	DecodedTemplate: 
+	struct Packet_0xa
+	{
+		const short Header = 0xa;		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		//short string_length;	//MaxLength: 20		//Size in Packet: 4 bytes
+		wchar_t[20]		//Size in Packet: 2 * string_length bytes
+	}
+Packet 0x000B
+	TemplateSize: 5
+
+	Template: 0x0000000B 0x00000404 0x00000404 0x00000404 
+		0x00000404 
+
+	DecodedTemplate: 
+	struct Packet_0xb
+	{
+		const short Header = 0xb;		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+	}
+Packet 0x000C
+	TemplateSize: 4
+
+	Template: 0x0000000C 0x00000404 0x00000404 0x00001417 
+
+	DecodedTemplate: 
+	struct Packet_0xc
+	{
+		const short Header = 0xc;		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		//short string_length;	//MaxLength: 20		//Size in Packet: 4 bytes
+		wchar_t[20]		//Size in Packet: 2 * string_length bytes
+	}
+Packet 0x000D
+	TemplateSize: 2
+
+	Template: 0x0000000D 0x00000404 
+
+	DecodedTemplate: 
+	struct Packet_0xd
+	{
+		const short Header = 0xd;		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+	}
+Packet 0x000E
+	TemplateSize: 2
+
+	Template: 0x0000000E 0x00000404 
+
+	DecodedTemplate: 
+	struct Packet_0xe
+	{
+		const short Header = 0xe;		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+	}
+Packet 0x000F
+	TemplateSize: 4
+
+	Template: 0x0000000F 0x00005C0B 0x00000006 0x00001005 
+
+	DecodedTemplate: 
+	struct Packet_0xf
+	{
+		const short Header = 0xf;		//Size in Packet: 4 bytes
+		short length;	//MaxLength: 92		//Size in Packet: 4 bytes
+		BYTE[length]	//MaxLength: 92		//Size in Packet: 1 * length bytes MaxSize in Packet: 92bytes
+		BYTE[16]		//Size in Packet: 16 bytes
+	}
+Packet 0x0010
+	TemplateSize: 2
+
+	Template: 0x00000010 0x00000404 
+
+	DecodedTemplate: 
+	struct Packet_0x10
+	{
+		const short Header = 0x10;		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+	}
+Packet 0x0011
+	TemplateSize: 2
+
+	Template: 0x00000011 0x00010017 
+
+	DecodedTemplate: 
+	struct Packet_0x11
+	{
+		const short Header = 0x11;		//Size in Packet: 4 bytes
+		//short string_length;	//MaxLength: 256		//Size in Packet: 4 bytes
+		wchar_t[256]		//Size in Packet: 2 * string_length bytes
+	}
+Packet 0x0012
+	TemplateSize: 8
+
+	Template: 0x00000012 0x00000404 0x00000404 0x00001409 
+		0x00004017 0x00001017 0x00001417 0x00001417 
+
+	DecodedTemplate: 
+	struct Packet_0x12
+	{
+		const short Header = 0x12;		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		BYTE[20]		//Size in Packet: 20 bytes
+		//short string_length;	//MaxLength: 64		//Size in Packet: 4 bytes
+		wchar_t[64]		//Size in Packet: 2 * string_length bytes
+		//short string_length;	//MaxLength: 16		//Size in Packet: 4 bytes
+		wchar_t[16]		//Size in Packet: 2 * string_length bytes
+		//short string_length;	//MaxLength: 20		//Size in Packet: 4 bytes
+		wchar_t[20]		//Size in Packet: 2 * string_length bytes
+		//short string_length;	//MaxLength: 20		//Size in Packet: 4 bytes
+		wchar_t[20]		//Size in Packet: 2 * string_length bytes
+	}
+Packet 0x0013
+	TemplateSize: 0
+
+	Template: 
+
+	DecodedTemplate: 
+Packet 0x0014
+	TemplateSize: 6
+
+	Template: 0x00000014 0x00000404 0x00000404 0x00004017 
+		0x00004017 0x00010017 
+
+	DecodedTemplate: 
+	struct Packet_0x14
+	{
+		const short Header = 0x14;		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		//short string_length;	//MaxLength: 64		//Size in Packet: 4 bytes
+		wchar_t[64]		//Size in Packet: 2 * string_length bytes
+		//short string_length;	//MaxLength: 64		//Size in Packet: 4 bytes
+		wchar_t[64]		//Size in Packet: 2 * string_length bytes
+		//short string_length;	//MaxLength: 256		//Size in Packet: 4 bytes
+		wchar_t[256]		//Size in Packet: 2 * string_length bytes
+	}
+Packet 0x0015
+	TemplateSize: 2
+
+	Template: 0x00000015 0x00000404 
+
+	DecodedTemplate: 
+	struct Packet_0x15
+	{
+		const short Header = 0x15;		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+	}
+Packet 0x0016
+	TemplateSize: 2
+
+	Template: 0x00000016 0x00000404 
+
+	DecodedTemplate: 
+	struct Packet_0x16
+	{
+		const short Header = 0x16;		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+	}
+Packet 0x0017
+	TemplateSize: 2
+
+	Template: 0x00000017 0x00000404 
+
+	DecodedTemplate: 
+	struct Packet_0x17
+	{
+		const short Header = 0x17;		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+	}
+Packet 0x0018
+	TemplateSize: 3
+
+	Template: 0x00000018 0x00000404 0x00004017 
+
+	DecodedTemplate: 
+	struct Packet_0x18
+	{
+		const short Header = 0x18;		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		//short string_length;	//MaxLength: 64		//Size in Packet: 4 bytes
+		wchar_t[64]		//Size in Packet: 2 * string_length bytes
+	}
+Packet 0x0019
+	TemplateSize: 5
+
+	Template: 0x00000019 0x00000404 0x00000404 0x00001409 
+		0x00001409 
+
+	DecodedTemplate: 
+	struct Packet_0x19
+	{
+		const short Header = 0x19;		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		BYTE[20]		//Size in Packet: 20 bytes
+		BYTE[20]		//Size in Packet: 20 bytes
+	}
+Packet 0x001A
+	TemplateSize: 5
+
+	Template: 0x0000001A 0x00000404 0x00000404 0x00001417 
+		0x00001417 
+
+	DecodedTemplate: 
+	struct Packet_0x1a
+	{
+		const short Header = 0x1a;		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		//short string_length;	//MaxLength: 20		//Size in Packet: 4 bytes
+		wchar_t[20]		//Size in Packet: 2 * string_length bytes
+		//short string_length;	//MaxLength: 20		//Size in Packet: 4 bytes
+		wchar_t[20]		//Size in Packet: 2 * string_length bytes
+	}
+Packet 0x001B
+	TemplateSize: 4
+
+	Template: 0x0000001B 0x00000404 0x00001417 0x00001417 
+
+	DecodedTemplate: 
+	struct Packet_0x1b
+	{
+		const short Header = 0x1b;		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		//short string_length;	//MaxLength: 20		//Size in Packet: 4 bytes
+		wchar_t[20]		//Size in Packet: 2 * string_length bytes
+		//short string_length;	//MaxLength: 20		//Size in Packet: 4 bytes
+		wchar_t[20]		//Size in Packet: 2 * string_length bytes
+	}
+Packet 0x001C
+	TemplateSize: 3
+
+	Template: 0x0000001C 0x00000404 0x00001A17 
+
+	DecodedTemplate: 
+	struct Packet_0x1c
+	{
+		const short Header = 0x1c;		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		//short string_length;	//MaxLength: 26		//Size in Packet: 4 bytes
+		wchar_t[26]		//Size in Packet: 2 * string_length bytes
+	}
+Packet 0x001D
+	TemplateSize: 3
+
+	Template: 0x0000001D 0x00000404 0x00000404 
+
+	DecodedTemplate: 
+	struct Packet_0x1d
+	{
+		const short Header = 0x1d;		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+	}
+Packet 0x001E
+	TemplateSize: 4
+
+	Template: 0x0000001E 0x00000404 0x00000404 0x00001A17 
+
+	DecodedTemplate: 
+	struct Packet_0x1e
+	{
+		const short Header = 0x1e;		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		//short string_length;	//MaxLength: 26		//Size in Packet: 4 bytes
+		wchar_t[26]		//Size in Packet: 2 * string_length bytes
+	}
+Packet 0x001F
+	TemplateSize: 23
+
+	Template: 0x0000001F 0x00000404 0x00000404 0x00000404 
+		0x00000404 0x00000404 0x00000404 0x00004017 0x00001017 
+		0x00010017 0x00002017 0x00001C17 0x00001C17 
+		0x00002017 0x00002017 0x00001C17 0x00000417 
+		0x00002017 0x00000417 0x00001C17 0x00000C17 
+		0x00001417 0x00004017 
+
+	DecodedTemplate: 
+	struct Packet_0x1f
+	{
+		const short Header = 0x1f;		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		//short string_length;	//MaxLength: 64		//Size in Packet: 4 bytes
+		wchar_t[64]		//Size in Packet: 2 * string_length bytes
+		//short string_length;	//MaxLength: 16		//Size in Packet: 4 bytes
+		wchar_t[16]		//Size in Packet: 2 * string_length bytes
+		//short string_length;	//MaxLength: 256		//Size in Packet: 4 bytes
+		wchar_t[256]		//Size in Packet: 2 * string_length bytes
+		//short string_length;	//MaxLength: 32		//Size in Packet: 4 bytes
+		wchar_t[32]		//Size in Packet: 2 * string_length bytes
+		//short string_length;	//MaxLength: 28		//Size in Packet: 4 bytes
+		wchar_t[28]		//Size in Packet: 2 * string_length bytes
+		//short string_length;	//MaxLength: 28		//Size in Packet: 4 bytes
+		wchar_t[28]		//Size in Packet: 2 * string_length bytes
+		//short string_length;	//MaxLength: 32		//Size in Packet: 4 bytes
+		wchar_t[32]		//Size in Packet: 2 * string_length bytes
+		//short string_length;	//MaxLength: 32		//Size in Packet: 4 bytes
+		wchar_t[32]		//Size in Packet: 2 * string_length bytes
+		//short string_length;	//MaxLength: 28		//Size in Packet: 4 bytes
+		wchar_t[28]		//Size in Packet: 2 * string_length bytes
+		//short string_length;	//MaxLength: 4		//Size in Packet: 4 bytes
+		wchar_t[4]		//Size in Packet: 2 * string_length bytes
+		//short string_length;	//MaxLength: 32		//Size in Packet: 4 bytes
+		wchar_t[32]		//Size in Packet: 2 * string_length bytes
+		//short string_length;	//MaxLength: 4		//Size in Packet: 4 bytes
+		wchar_t[4]		//Size in Packet: 2 * string_length bytes
+		//short string_length;	//MaxLength: 28		//Size in Packet: 4 bytes
+		wchar_t[28]		//Size in Packet: 2 * string_length bytes
+		//short string_length;	//MaxLength: 12		//Size in Packet: 4 bytes
+		wchar_t[12]		//Size in Packet: 2 * string_length bytes
+		//short string_length;	//MaxLength: 20		//Size in Packet: 4 bytes
+		wchar_t[20]		//Size in Packet: 2 * string_length bytes
+		//short string_length;	//MaxLength: 64		//Size in Packet: 4 bytes
+		wchar_t[64]		//Size in Packet: 2 * string_length bytes
+	}
+Packet 0x0020
+	TemplateSize: 4
+
+	Template: 0x00000020 0x00000404 0x0002000B 0x00000006 
+
+	DecodedTemplate: 
+	struct Packet_0x20
+	{
+		const short Header = 0x20;		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		short length;	//MaxLength: 512		//Size in Packet: 4 bytes
+		BYTE[length]	//MaxLength: 512		//Size in Packet: 1 * length bytes MaxSize in Packet: 512bytes
+	}
+Packet 0x0021
+	TemplateSize: 3
+
+	Template: 0x00000021 0x00000404 0x00000404 
+
+	DecodedTemplate: 
+	struct Packet_0x21
+	{
+		const short Header = 0x21;		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+	}
+Packet 0x0022
+	TemplateSize: 2
+
+	Template: 0x00000022 0x00000404 
+
+	DecodedTemplate: 
+	struct Packet_0x22
+	{
+		const short Header = 0x22;		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+	}
+Packet 0x0023
+	TemplateSize: 2
+
+	Template: 0x00000023 0x00000404 
+
+	DecodedTemplate: 
+	struct Packet_0x23
+	{
+		const short Header = 0x23;		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+	}
+Packet 0x0024
+	TemplateSize: 4
+
+	Template: 0x00000024 0x00000404 0x00004017 0x00001017 
+
+	DecodedTemplate: 
+	struct Packet_0x24
+	{
+		const short Header = 0x24;		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		//short string_length;	//MaxLength: 64		//Size in Packet: 4 bytes
+		wchar_t[64]		//Size in Packet: 2 * string_length bytes
+		//short string_length;	//MaxLength: 16		//Size in Packet: 4 bytes
+		wchar_t[16]		//Size in Packet: 2 * string_length bytes
+	}
+Packet 0x0025
+	TemplateSize: 7
+
+	Template: 0x00000025 0x00000404 0x00000404 0x00000404 
+		0x00000404 0x00000404 0x00001005 
+
+	DecodedTemplate: 
+	struct Packet_0x25
+	{
+		const short Header = 0x25;		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		BYTE[16]		//Size in Packet: 16 bytes
+	}
+Packet 0x0026
+	TemplateSize: 2
+
+	Template: 0x00000026 0x00000104 
+
+	DecodedTemplate: 
+	struct Packet_0x26
+	{
+		const short Header = 0x26;		//Size in Packet: 4 bytes
+		BYTE	//Mask: 0x000000ff		//Size in Packet: 4 bytes
+	}
+Packet 0x0027
+	TemplateSize: 2
+
+	Template: 0x00000027 0x00000404 
+
+	DecodedTemplate: 
+	struct Packet_0x27
+	{
+		const short Header = 0x27;		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+	}
+Packet 0x0028
+	TemplateSize: 9
+
+	Template: 0x00000028 0x00000404 0x00001C17 0x00001C17 
+		0x00002017 0x00002017 0x00000C17 0x00001C17 0x00001C17 
+
+	DecodedTemplate: 
+	struct Packet_0x28
+	{
+		const short Header = 0x28;		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		//short string_length;	//MaxLength: 28		//Size in Packet: 4 bytes
+		wchar_t[28]		//Size in Packet: 2 * string_length bytes
+		//short string_length;	//MaxLength: 28		//Size in Packet: 4 bytes
+		wchar_t[28]		//Size in Packet: 2 * string_length bytes
+		//short string_length;	//MaxLength: 32		//Size in Packet: 4 bytes
+		wchar_t[32]		//Size in Packet: 2 * string_length bytes
+		//short string_length;	//MaxLength: 32		//Size in Packet: 4 bytes
+		wchar_t[32]		//Size in Packet: 2 * string_length bytes
+		//short string_length;	//MaxLength: 12		//Size in Packet: 4 bytes
+		wchar_t[12]		//Size in Packet: 2 * string_length bytes
+		//short string_length;	//MaxLength: 28		//Size in Packet: 4 bytes
+		wchar_t[28]		//Size in Packet: 2 * string_length bytes
+		//short string_length;	//MaxLength: 28		//Size in Packet: 4 bytes
+		wchar_t[28]		//Size in Packet: 2 * string_length bytes
+	}
+Packet 0x0029
+	TemplateSize: 7
+
+	Template: 0x00000029 0x00000404 0x00000404 0x00000404 
+		0x00000404 0x00000404 0x00000404 
+
+	DecodedTemplate: 
+	struct Packet_0x29
+	{
+		const short Header = 0x29;		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+	}
+Packet 0x002A
+	TemplateSize: 4
+
+	Template: 0x0000002A 0x00000404 0x00001417 0x00001417 
+
+	DecodedTemplate: 
+	struct Packet_0x2a
+	{
+		const short Header = 0x2a;		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		//short string_length;	//MaxLength: 20		//Size in Packet: 4 bytes
+		wchar_t[20]		//Size in Packet: 2 * string_length bytes
+		//short string_length;	//MaxLength: 20		//Size in Packet: 4 bytes
+		wchar_t[20]		//Size in Packet: 2 * string_length bytes
+	}
+Packet 0x002B
+	TemplateSize: 6
+
+	Template: 0x0000002B 0x00000404 0x0000802B 0x00000006 
+		0x0000802B 0x00000006 
+
+	DecodedTemplate: 
+	struct Packet_0x2b
+	{
+		const short Header = 0x2b;		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		short length;	//MaxLength: 128		//Size in Packet: 4 bytes
+		DWORD[length]	//MaxLength: 128		//Size in Packet: 4 * length bytes MaxSize in Packet: 512bytes
+		short length;	//MaxLength: 128		//Size in Packet: 4 bytes
+		DWORD[length]	//MaxLength: 128		//Size in Packet: 4 * length bytes MaxSize in Packet: 512bytes
+	}
+Packet 0x002C
+	TemplateSize: 25
+
+	Template: 0x0000002C 0x00000404 0x00000404 0x00000404 
+		0x00000404 0x00000404 0x00000404 0x00002017 0x00004017 
+		0x00004017 0x00001C17 0x00000417 0x00000417 
+		0x00000C17 0x00000817 0x00002017 0x00001C17 
+		0x00004017 0x00004017 0x00000A17 0x00000617 
+		0x0000802B 0x00000006 0x0000802B 0x00000006 
+
+	DecodedTemplate: 
+	struct Packet_0x2c
+	{
+		const short Header = 0x2c;		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		//short string_length;	//MaxLength: 32		//Size in Packet: 4 bytes
+		wchar_t[32]		//Size in Packet: 2 * string_length bytes
+		//short string_length;	//MaxLength: 64		//Size in Packet: 4 bytes
+		wchar_t[64]		//Size in Packet: 2 * string_length bytes
+		//short string_length;	//MaxLength: 64		//Size in Packet: 4 bytes
+		wchar_t[64]		//Size in Packet: 2 * string_length bytes
+		//short string_length;	//MaxLength: 28		//Size in Packet: 4 bytes
+		wchar_t[28]		//Size in Packet: 2 * string_length bytes
+		//short string_length;	//MaxLength: 4		//Size in Packet: 4 bytes
+		wchar_t[4]		//Size in Packet: 2 * string_length bytes
+		//short string_length;	//MaxLength: 4		//Size in Packet: 4 bytes
+		wchar_t[4]		//Size in Packet: 2 * string_length bytes
+		//short string_length;	//MaxLength: 12		//Size in Packet: 4 bytes
+		wchar_t[12]		//Size in Packet: 2 * string_length bytes
+		//short string_length;	//MaxLength: 8		//Size in Packet: 4 bytes
+		wchar_t[8]		//Size in Packet: 2 * string_length bytes
+		//short string_length;	//MaxLength: 32		//Size in Packet: 4 bytes
+		wchar_t[32]		//Size in Packet: 2 * string_length bytes
+		//short string_length;	//MaxLength: 28		//Size in Packet: 4 bytes
+		wchar_t[28]		//Size in Packet: 2 * string_length bytes
+		//short string_length;	//MaxLength: 64		//Size in Packet: 4 bytes
+		wchar_t[64]		//Size in Packet: 2 * string_length bytes
+		//short string_length;	//MaxLength: 64		//Size in Packet: 4 bytes
+		wchar_t[64]		//Size in Packet: 2 * string_length bytes
+		//short string_length;	//MaxLength: 10		//Size in Packet: 4 bytes
+		wchar_t[10]		//Size in Packet: 2 * string_length bytes
+		//short string_length;	//MaxLength: 6		//Size in Packet: 4 bytes
+		wchar_t[6]		//Size in Packet: 2 * string_length bytes
+		short length;	//MaxLength: 128		//Size in Packet: 4 bytes
+		DWORD[length]	//MaxLength: 128		//Size in Packet: 4 * length bytes MaxSize in Packet: 512bytes
+		short length;	//MaxLength: 128		//Size in Packet: 4 bytes
+		DWORD[length]	//MaxLength: 128		//Size in Packet: 4 * length bytes MaxSize in Packet: 512bytes
+	}
+Packet 0x002D
+	TemplateSize: 2
+
+	Template: 0x0000002D 0x00000404 
+
+	DecodedTemplate: 
+	struct Packet_0x2d
+	{
+		const short Header = 0x2d;		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+	}
+Packet 0x002E
+	TemplateSize: 1
+
+	Template: 0x0000002E 
+
+	DecodedTemplate: 
+	struct Packet_0x2e
+	{
+		const short Header = 0x2e;		//Size in Packet: 4 bytes
+	}
+Packet 0x002F
+	TemplateSize: 0
+
+	Template: 
+
+	DecodedTemplate: 
+Packet 0x0030
+	TemplateSize: 2
+
+	Template: 0x00000030 0x00000404 
+
+	DecodedTemplate: 
+	struct Packet_0x30
+	{
+		const short Header = 0x30;		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+	}
+Packet 0x0031
+	TemplateSize: 2
+
+	Template: 0x00000031 0x00000404 
+
+	DecodedTemplate: 
+	struct Packet_0x31
+	{
+		const short Header = 0x31;		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+	}
+Packet 0x0032
+	TemplateSize: 3
+
+	Template: 0x00000032 0x00000404 0x00000A17 
+
+	DecodedTemplate: 
+	struct Packet_0x32
+	{
+		const short Header = 0x32;		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		//short string_length;	//MaxLength: 10		//Size in Packet: 4 bytes
+		wchar_t[10]		//Size in Packet: 2 * string_length bytes
+	}
+Packet 0x0033
+	TemplateSize: 6
+
+	Template: 0x00000033 0x00000404 0x00000404 0x00000404 
+		0x00000404 0x00001217 
+
+	DecodedTemplate: 
+	struct Packet_0x33
+	{
+		const short Header = 0x33;		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		//short string_length;	//MaxLength: 18		//Size in Packet: 4 bytes
+		wchar_t[18]		//Size in Packet: 2 * string_length bytes
+	}
+Packet 0x0034
+	TemplateSize: 4
+
+	Template: 0x00000034 0x00000404 0x00000404 0x00000404 
+
+	DecodedTemplate: 
+	struct Packet_0x34
+	{
+		const short Header = 0x34;		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+	}
+Packet 0x0035
+	TemplateSize: 2
+
+	Template: 0x00000035 0x00000404 
+
+	DecodedTemplate: 
+	struct Packet_0x35
+	{
+		const short Header = 0x35;		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+	}
+Packet 0x0036
+	TemplateSize: 25
+
+	Template: 0x00000036 0x00000404 0x00000404 0x00000404 
+		0x00000404 0x00000404 0x00000404 0x00010005 0x00002017 
+		0x00004017 0x00004017 0x00001C17 0x00000417 
+		0x00000417 0x00000C17 0x00000817 0x00002017 
+		0x00001C17 0x00004017 0x00004017 0x00000A17 
+		0x0000802B 0x00000006 0x0000802B 0x00000006 
+
+	DecodedTemplate: 
+	struct Packet_0x36
+	{
+		const short Header = 0x36;		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		BYTE[256]		//Size in Packet: 256 bytes
+		//short string_length;	//MaxLength: 32		//Size in Packet: 4 bytes
+		wchar_t[32]		//Size in Packet: 2 * string_length bytes
+		//short string_length;	//MaxLength: 64		//Size in Packet: 4 bytes
+		wchar_t[64]		//Size in Packet: 2 * string_length bytes
+		//short string_length;	//MaxLength: 64		//Size in Packet: 4 bytes
+		wchar_t[64]		//Size in Packet: 2 * string_length bytes
+		//short string_length;	//MaxLength: 28		//Size in Packet: 4 bytes
+		wchar_t[28]		//Size in Packet: 2 * string_length bytes
+		//short string_length;	//MaxLength: 4		//Size in Packet: 4 bytes
+		wchar_t[4]		//Size in Packet: 2 * string_length bytes
+		//short string_length;	//MaxLength: 4		//Size in Packet: 4 bytes
+		wchar_t[4]		//Size in Packet: 2 * string_length bytes
+		//short string_length;	//MaxLength: 12		//Size in Packet: 4 bytes
+		wchar_t[12]		//Size in Packet: 2 * string_length bytes
+		//short string_length;	//MaxLength: 8		//Size in Packet: 4 bytes
+		wchar_t[8]		//Size in Packet: 2 * string_length bytes
+		//short string_length;	//MaxLength: 32		//Size in Packet: 4 bytes
+		wchar_t[32]		//Size in Packet: 2 * string_length bytes
+		//short string_length;	//MaxLength: 28		//Size in Packet: 4 bytes
+		wchar_t[28]		//Size in Packet: 2 * string_length bytes
+		//short string_length;	//MaxLength: 64		//Size in Packet: 4 bytes
+		wchar_t[64]		//Size in Packet: 2 * string_length bytes
+		//short string_length;	//MaxLength: 64		//Size in Packet: 4 bytes
+		wchar_t[64]		//Size in Packet: 2 * string_length bytes
+		//short string_length;	//MaxLength: 10		//Size in Packet: 4 bytes
+		wchar_t[10]		//Size in Packet: 2 * string_length bytes
+		short length;	//MaxLength: 128		//Size in Packet: 4 bytes
+		DWORD[length]	//MaxLength: 128		//Size in Packet: 4 * length bytes MaxSize in Packet: 512bytes
+		short length;	//MaxLength: 128		//Size in Packet: 4 bytes
+		DWORD[length]	//MaxLength: 128		//Size in Packet: 4 * length bytes MaxSize in Packet: 512bytes
+	}
+Packet 0x0037
+	TemplateSize: 4
+
+	Template: 0x00000037 0x00000404 0x00001417 0x00001417 
+
+	DecodedTemplate: 
+	struct Packet_0x37
+	{
+		const short Header = 0x37;		//Size in Packet: 4 bytes
+		DWORD	//Mask: 0xffffffff		//Size in Packet: 4 bytes
+		//short string_length;	//MaxLength: 20		//Size in Packet: 4 bytes
+		wchar_t[20]		//Size in Packet: 2 * string_length bytes
+		//short string_length;	//MaxLength: 20		//Size in Packet: 4 bytes
+		wchar_t[20]		//Size in Packet: 2 * string_length bytes
+	}

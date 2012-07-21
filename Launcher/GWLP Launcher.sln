@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GWLP Launcher", "GWLP Launcher\GWLP Launcher.vcxproj", "{FC504AD5-3D0D-4BB9-BAEC-B9A8A0AD84DB}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GWLP", "GWLP\GWLP.vcxproj", "{7F621ECC-8BFF-446C-BFB1-3D6539D469C7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FC504AD5-3D0D-4BB9-BAEC-B9A8A0AD84DB}.Debug|Win32.ActiveCfg = Debug|Win32
+		{FC504AD5-3D0D-4BB9-BAEC-B9A8A0AD84DB}.Debug|Win32.Build.0 = Debug|Win32
+		{FC504AD5-3D0D-4BB9-BAEC-B9A8A0AD84DB}.Release|Win32.ActiveCfg = Release|Win32
+		{FC504AD5-3D0D-4BB9-BAEC-B9A8A0AD84DB}.Release|Win32.Build.0 = Release|Win32
+		{7F621ECC-8BFF-446C-BFB1-3D6539D469C7}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7F621ECC-8BFF-446C-BFB1-3D6539D469C7}.Debug|Win32.Build.0 = Debug|Win32
+		{7F621ECC-8BFF-446C-BFB1-3D6539D469C7}.Release|Win32.ActiveCfg = Release|Win32
+		{7F621ECC-8BFF-446C-BFB1-3D6539D469C7}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
