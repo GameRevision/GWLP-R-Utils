@@ -1,6 +1,22 @@
+#files
+*~
 *.class
+*.DS_Store
+*.lock
+*.out
+*.swp
+.directory
+.project
 
-# Package Files #
-*.jar
-*.war
-*.ear
+#dirs
+*/.settings/*
+*/target/*
+
+/Thumbs.db
+/Utils/PacketCodeGen/target/
+/ServerApp/actions/target/
+/ServerApp/loginshard/target/
+/ServerApp/framework/target/
+/ServerApp/protocol/target/
+/ServerApp/mapshard/target/
+/ServerApp/fileshard/target/
