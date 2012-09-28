@@ -37,7 +37,7 @@ public final class CodeGenExec
     {       
         // the schema file to be used in the codegenerator
         File schema = new File("input" + File.separator + "gw-packet-schema.xsd");
-        
+
         // check if the schema file exists
         if (!schema.exists())
         {

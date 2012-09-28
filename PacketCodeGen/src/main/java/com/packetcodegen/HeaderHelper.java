@@ -45,7 +45,7 @@ public final class HeaderHelper
         
         this.imports =
                 (packet.getFromClient() ? "import com.realityshard.shardlet.EventAggregator;\n" : "") +
-                (packet.getFromClient() ? "import com.realityshard.shardlet.GenericEventAction;" : "import com.realityshard.shardlet.GenericAction;") + "\n" +
+                (packet.getFromClient() ? "import com.realityshard.shardlet.utils.GenericTriggerableAction;" : "import com.realityshard.shardlet.utils.GenericAction;") + "\n" +
                 (packet.getFromClient() ? "" : "import java.nio.BufferOverflowException;\n") +
                 (packet.getFromClient() ? "" : "import java.nio.ByteBuffer;\n") +
                 (packet.getFromClient() ? "" : "import java.nio.ByteOrder;\n");
@@ -62,7 +62,7 @@ public final class HeaderHelper
                 " * @author " + packet.getAuthor() + "\n" +
                 " */\n" +
                 "public final class " + packet.getActionName() + " extends " +
-                    (packet.getFromClient() ? "GenericEventAction" : "GenericAction") + "\n" +
+                    (packet.getFromClient() ? "GenericTriggerableAction" : "GenericAction") + "\n" +
                 "{\n" +
                 "\n";
     }
