@@ -1,21 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-    
+
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.packetcodegen</groupId>
     <artifactId>packetcodegen</artifactId>
-    <version>0.1.0_RC1-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <version>0.1.0</version>
     <name>${project.artifactId}</name>
-    
-    
-    <description>This program is used to generate ShardletActions and code to parse GW packets</description>
+
+
+    <description>This program is used to generate ShardletActions (i.e. code to parse GW packets)</description>
     <url>http://github.com/GameRevision/GWLP-R</url>
     <inceptionYear>2012</inceptionYear>
-    <organization>
-        <name>Game Revision</name>
-        <url>http://www.gamerevision.com</url>
-    </organization>
 
 
     <properties>
@@ -25,18 +20,16 @@
         <java.optimize>true</java.optimize>
         <java.verbose>true</java.verbose>
     </properties>
-    
-    
+
+
     <dependencies>
         <!-- Shardlet API -->
         <dependency>
             <groupId>com.realityshard</groupId>
             <artifactId>shardlet</artifactId>
-            <version>0.1.0_RC2</version>
-            <scope>test</scope>
-            <type>jar</type>
+            <version>0.2.2</version>
         </dependency>
-        
+
         <!-- JUnit for testing -->
         <dependency>
             <groupId>junit</groupId>
@@ -72,29 +65,29 @@
                 <groupId>org.jvnet.jaxb2.maven2</groupId>
                 <artifactId>maven-jaxb2-plugin</artifactId>
                 <executions>
-                    
+
                     <execution>
                         <id>gw-packets</id>
-                        
+
                         <phase>generate-sources</phase>
-                        
+
                         <goals>
                             <goal>generate</goal>
                         </goals>
-                        
+
                         <configuration>
                             <forceRegenerate>true</forceRegenerate>
                             <generateDirectory>src/main/java</generateDirectory>
                             <generatePackage>com.packetcodegen.jaxb</generatePackage>
                             <episode>false</episode>
                         </configuration>
-                        
+
                     </execution>
-                    
+
                 </executions>
             </plugin>
 
         </plugins>
     </build>
 
-</project> 
+</project>
