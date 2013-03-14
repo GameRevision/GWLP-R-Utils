@@ -8,15 +8,11 @@ import com.packetcodegen.jaxb.CommunicationDirection;
 import com.packetcodegen.jaxb.PacketFieldType;
 import com.packetcodegen.jaxb.PacketType;
 import com.packetcodegen.jaxb.Packets;
-import com.realityshard.container.utils.JaxbUtils;
 import java.io.File;
 import java.io.FileWriter;
-import java.io.IOException;
 import java.util.List;
-import javax.xml.bind.JAXBException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.xml.sax.SAXException;
 
 /**
  * This class is used to create packet actions (ShardletActions) out of a

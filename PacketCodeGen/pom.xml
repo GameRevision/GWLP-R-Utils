@@ -37,12 +37,6 @@
             <version>4.8.2</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>com.realityshard</groupId>
-            <artifactId>container</artifactId>
-            <version>0.1.0_RC2</version>
-            <type>jar</type>
-        </dependency>
     </dependencies>
 
 
@@ -76,7 +70,7 @@
                         </goals>
 
                         <configuration>
-                            <forceRegenerate>true</forceRegenerate>
+                            <!--<forceRegenerate>true</forceRegenerate>-->
                             <generateDirectory>src/main/java</generateDirectory>
                             <generatePackage>com.packetcodegen.jaxb</generatePackage>
                             <episode>false</episode>
