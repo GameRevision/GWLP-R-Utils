@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <Packets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="gw1-packet-schema.xsd">
-
   <Direction abbr="LStoC" name="LoginServer to Client">
     <Packet header="0">
       <Info>
@@ -11,13 +10,29 @@
     </Packet>
     <Packet header="1">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>ComputerInfoReply</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
+      <Field type="int32">
+        <Info>
+          <Name>Data1</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>LoginCount</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Data2</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Data3</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="2">
       <Info>
@@ -29,11 +44,19 @@
     </Packet>
     <Packet header="3">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>StreamTerminator</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int32"/>
-      <Field type="int32"/>
+      <Field type="int32">
+        <Info>
+          <Name>LoginCount</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>ErrorCode</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="4">
       <Info>
@@ -92,14 +115,34 @@
     </Packet>
     <Packet header="9">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>ReferToGameServer</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field occurs="24" prefixType="int16" static="true" type="int8"/>
-      <Field type="int32"/>
+      <Field type="int32">
+        <Info>
+          <Name>LoginCount</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>SecurityKey1</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>GameMapID</Name>
+        </Info>
+      </Field>
+      <Field occurs="24" prefixType="int16" static="true" type="int8">
+        <Info>
+          <Name>ServerConnectionInfo</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>SecurityKey2</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="10">
       <Info>
@@ -167,20 +210,64 @@
     </Packet>
     <Packet header="17">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>AccountPermissions</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field occurs="8" prefixType="int16" static="true" type="int8"/>
-      <Field occurs="8" prefixType="int16" static="true" type="int8"/>
-      <Field occurs="16" prefixType="int16" static="true" type="int8"/>
-      <Field occurs="16" prefixType="int16" static="true" type="int8"/>
-      <Field type="int32"/>
-      <Field occurs="200" prefixType="int16" static="false" type="int8"/>
-      <Field type="int8"/>
-      <Field type="int32"/>
+      <Field type="int32">
+        <Info>
+          <Name>LoginCount</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Territory</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>TerritoryChanges</Name>
+        </Info>
+      </Field>
+      <Field occurs="8" prefixType="int16" static="true" type="int8">
+        <Info>
+          <Name>Data1</Name>
+        </Info>
+      </Field>
+      <Field occurs="8" prefixType="int16" static="true" type="int8">
+        <Info>
+          <Name>Data2</Name>
+        </Info>
+      </Field>
+      <Field occurs="16" prefixType="int16" static="true" type="int8">
+        <Info>
+          <Name>Data3</Name>
+        </Info>
+      </Field>
+      <Field occurs="16" prefixType="int16" static="true" type="int8">
+        <Info>
+          <Name>Data4</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>ChangeAccountSettings</Name>
+        </Info>
+      </Field>
+      <Field occurs="200" prefixType="int16" static="false" type="int8">
+        <Info>
+          <Name>AccountFeatures</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>EulaAccepted</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Data5</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="18">
       <Info>
@@ -203,11 +290,19 @@
     </Packet>
     <Packet header="20">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>FriendsListEnd</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int32"/>
-      <Field type="int32"/>
+      <Field type="int32">
+        <Info>
+          <Name>LoginCount</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Data1</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="21">
       <Info>
@@ -223,11 +318,19 @@
     </Packet>
     <Packet header="22">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>AccountGuiInfo</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int32"/>
-      <Field occurs="1024" prefixType="int16" static="false" type="int8"/>
+      <Field type="int32">
+        <Info>
+          <Name>LoginCount</Name>
+        </Info>
+      </Field>
+      <Field occurs="1024" prefixType="int16" static="false" type="int8">
+        <Info>
+          <Name>Settings</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="23">
       <Info>
@@ -374,16 +477,7 @@
         <Author>GWLPR Template Updater</Author>
       </Info>
     </Packet>
-    <Packet header="38">
-      <Info>
-        <Description>Auto generated</Description>
-        <Author>GWLPR Template Updater</Author>
-      </Info>
-      <Field type="int32"/>
-      <Field type="int32"/>
-    </Packet>
   </Direction>
-
   <Direction abbr="GStoC" name="GameServer to Client">
     <Packet header="0">
       <Info>
@@ -478,14 +572,34 @@
     </Packet>
     <Packet header="12">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>HeroUnlocked</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int8"/>
-      <Field type="int8"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int8"/>
+      <Field type="int8">
+        <Info>
+          <Name>HeroID</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Profession</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>NPCFile</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>ModelFile</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Data5</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="13">
       <Info>
@@ -523,11 +637,19 @@
     </Packet>
     <Packet header="17">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>SkillUnlocked</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int16"/>
-      <Field type="int8"/>
+      <Field type="int16">
+        <Info>
+          <Name>SkillID</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Unlocked</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="18">
       <Info>
@@ -581,10 +703,15 @@
     </Packet>
     <Packet header="22">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>DestroyAgent</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int32"/>
+      <Field type="int32">
+        <Info>
+          <Name>AgentID</Name>
+          <Description>ID of the agent to despawn</Description>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="23">
       <Info>
@@ -629,11 +756,19 @@
     </Packet>
     <Packet header="28">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>MovementSpeed</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int32"/>
-      <Field type="float"/>
+      <Field type="int32">
+        <Info>
+          <Name>Agent</Name>
+        </Info>
+      </Field>
+      <Field type="float">
+        <Info>
+          <Name>Speed</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="29">
       <Info>
@@ -674,12 +809,27 @@
     </Packet>
     <Packet header="33">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>UpdateAgentPosition</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int32"/>
-      <Field type="vec2"/>
-      <Field type="int16"/>
+      <Field type="int32">
+        <Info>
+          <Name>AgentID</Name>
+          <Description>the agent to update</Description>
+        </Info>
+      </Field>
+      <Field type="vec2">
+        <Info>
+          <Name>Position</Name>
+          <Description>the x/y-coordinates</Description>
+        </Info>
+      </Field>
+      <Field type="int16">
+        <Info>
+          <Name>Plane</Name>
+          <Description>plane the agent ist standing on</Description>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="34">
       <Info>
@@ -699,11 +849,19 @@
     </Packet>
     <Packet header="36">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>AgentClass</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int32"/>
-      <Field type="int32"/>
+      <Field type="int32">
+        <Info>
+          <Name>Agent</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Class</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="37">
       <Info>
@@ -720,10 +878,14 @@
     </Packet>
     <Packet header="38">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>HeroAccountName</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field occurs="32" prefixType="int16" static="false" type="utf16"/>
+      <Field occurs="32" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>AccountName</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="39">
       <Info>
@@ -739,18 +901,30 @@
     </Packet>
     <Packet header="40">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>MessageOfTheDay</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field occurs="64" prefixType="int16" static="false" type="utf16"/>
+      <Field occurs="64" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>Text</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="41">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>PingTarget</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int16"/>
-      <Field type="agentid"/>
+      <Field type="int16">
+        <Info>
+          <Name>PartyMember</Name>
+        </Info>
+      </Field>
+      <Field type="agentid">
+        <Info>
+          <Name>TargetAgent</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="42">
       <Info>
@@ -771,20 +945,40 @@
     </Packet>
     <Packet header="44">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>AgentAttributeCreate</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="agentid"/>
-      <Field type="int8"/>
-      <Field type="int8"/>
+      <Field type="agentid">
+        <Info>
+          <Name>AgentID</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>FreePts</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>MaxPts</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="45">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>UnusedAttributePts</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="agentid"/>
-      <Field type="int8"/>
+      <Field type="agentid">
+        <Info>
+          <Name>AgentID</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>UnusedPoints</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="46">
       <Info>
@@ -796,11 +990,20 @@
     </Packet>
     <Packet header="47">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>SetAttributes</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="agentid"/>
-      <Field occurs="48" prefixType="int16" static="false" type="int32"/>
+      <Field type="agentid">
+        <Info>
+          <Name>AgentID</Name>
+        </Info>
+      </Field>
+      <Field occurs="48" prefixType="int16" static="false" type="int32">
+        <Info>
+          <Name>Data</Name>
+          <Description>attribute id, normal value, modified value</Description>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="48">
       <Info>
@@ -824,51 +1027,123 @@
     </Packet>
     <Packet header="50">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>AgentAllyDestroy</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="agentid"/>
+      <Field type="agentid">
+        <Info>
+          <Name>Agent</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="51">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>SkillUpkeepAdd</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="agentid"/>
-      <Field type="agentid"/>
-      <Field type="int16"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
+      <Field type="agentid">
+        <Info>
+          <Name>Caster</Name>
+        </Info>
+      </Field>
+      <Field type="agentid">
+        <Info>
+          <Name>Target</Name>
+        </Info>
+      </Field>
+      <Field type="int16">
+        <Info>
+          <Name>SkillID</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Data2</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>BuffID</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="52">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>SkillUpkeepRemove</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="agentid"/>
-      <Field type="int32"/>
+      <Field type="agentid">
+        <Info>
+          <Name>Caster</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>BuffID</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="53">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>SkillEffect</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="agentid"/>
-      <Field type="agentid"/>
-      <Field type="int16"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
+      <Field type="agentid">
+        <Info>
+          <Name>Caster</Name>
+        </Info>
+      </Field>
+      <Field type="agentid">
+        <Info>
+          <Name>Target</Name>
+        </Info>
+      </Field>
+      <Field type="int16">
+        <Info>
+          <Name>SkillID</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Data2</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>BuffID</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="54">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>SkillEffectTimed</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="agentid"/>
-      <Field type="int16"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
+      <Field type="agentid">
+        <Info>
+          <Name>Caster</Name>
+        </Info>
+      </Field>
+      <Field type="int16">
+        <Info>
+          <Name>SkillID</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Data2</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>BuffID</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Duration</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="55">
       <Info>
@@ -882,11 +1157,19 @@
     </Packet>
     <Packet header="56">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>SkillEffectRemove</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="agentid"/>
-      <Field type="int32"/>
+      <Field type="agentid">
+        <Info>
+          <Name>Caster</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>BuffID</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="57">
       <Info>
@@ -917,26 +1200,73 @@
     </Packet>
     <Packet header="60">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>DisplayCape</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="agentid"/>
-      <Field type="int8"/>
+      <Field type="agentid">
+        <Info>
+          <Name>AgentID</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Display</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="61">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>QuestAddCompass</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int32"/>
-      <Field type="vec2"/>
-      <Field type="int16"/>
-      <Field type="int16"/>
-      <Field type="int32"/>
-      <Field occurs="8" prefixType="int16" static="false" type="utf16"/>
-      <Field occurs="8" prefixType="int16" static="false" type="utf16"/>
-      <Field occurs="8" prefixType="int16" static="false" type="utf16"/>
-      <Field type="int16"/>
+      <Field type="int32">
+        <Info>
+          <Name>ID</Name>
+        </Info>
+      </Field>
+      <Field type="vec2">
+        <Info>
+          <Name>Position</Name>
+          <Description>the x/y-coordinates</Description>
+        </Info>
+      </Field>
+      <Field type="int16">
+        <Info>
+          <Name>Data4</Name>
+        </Info>
+      </Field>
+      <Field type="int16">
+        <Info>
+          <Name>Data5</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Data6</Name>
+        </Info>
+      </Field>
+      <Field occurs="8" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>Category</Name>
+        </Info>
+      </Field>
+      <Field occurs="8" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>Name</Name>
+        </Info>
+      </Field>
+      <Field occurs="8" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>GivenBy</Name>
+          <Description>The name of the NPC that gave the quest.</Description>
+        </Info>
+      </Field>
+      <Field type="int16">
+        <Info>
+          <Name>MapID</Name>
+          <Description>The Map ID where the quest was given.</Description>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="62">
       <Info>
@@ -954,12 +1284,25 @@
     </Packet>
     <Packet header="64">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>QuestDescription</Name>
+        <Description>This is used to set the description and objectives of a quest (after the client requests it with P010) as seen in the quest log. These descriptions are made up of somewhat complex combinations of strings.</Description>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int32"/>
-      <Field occurs="128" prefixType="int16" static="false" type="utf16"/>
-      <Field occurs="128" prefixType="int16" static="false" type="utf16"/>
+      <Field type="int32">
+        <Info>
+          <Name>ID</Name>
+        </Info>
+      </Field>
+      <Field occurs="128" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>Description</Name>
+        </Info>
+      </Field>
+      <Field occurs="128" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>Objectives</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="65">
       <Info>
@@ -973,12 +1316,24 @@
     </Packet>
     <Packet header="66">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>QuestTapestry</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
+      <Field type="int32">
+        <Info>
+          <Name>ExperienceEarned</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>GoldEarned</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>SkillPointsEarned</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="67">
       <Info>
@@ -988,15 +1343,41 @@
     </Packet>
     <Packet header="68">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>QuestAdd</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field occurs="8" prefixType="int16" static="false" type="utf16"/>
-      <Field occurs="8" prefixType="int16" static="false" type="utf16"/>
-      <Field occurs="8" prefixType="int16" static="false" type="utf16"/>
-      <Field type="int16"/>
+      <Field type="int32">
+        <Info>
+          <Name>ID</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Status</Name>
+        </Info>
+      </Field>
+      <Field occurs="8" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>Category</Name>
+        </Info>
+      </Field>
+      <Field occurs="8" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>Name</Name>
+        </Info>
+      </Field>
+      <Field occurs="8" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>GivenBy</Name>
+          <Description>The name of the NPC that gave the quest.</Description>
+        </Info>
+      </Field>
+      <Field type="int16">
+        <Info>
+          <Name>MapID</Name>
+          <Description>The Map ID where the quest was given.</Description>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="69">
       <Info>
@@ -1010,10 +1391,14 @@
     </Packet>
     <Packet header="70">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>QuestRemove</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int32"/>
+      <Field type="int32">
+        <Info>
+          <Name>ID</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="71">
       <Info>
@@ -1041,34 +1426,86 @@
     </Packet>
     <Packet header="74">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>NPCGeneral</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int8"/>
-      <Field type="int8"/>
-      <Field occurs="8" prefixType="int16" static="false" type="utf16"/>
+      <Field type="int32">
+        <Info>
+          <Name>LocalID</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>NPCFile</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Texture</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Scale</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Data2</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Flags</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Profession</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Level</Name>
+        </Info>
+      </Field>
+      <Field occurs="8" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>Name</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="75">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>NPCModel</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int32"/>
-      <Field occurs="8" prefixType="int16" static="false" type="int32"/>
+      <Field type="int32">
+        <Info>
+          <Name>LocalID</Name>
+        </Info>
+      </Field>
+      <Field occurs="8" prefixType="int16" static="false" type="int32">
+        <Info>
+          <Name>ModelFile</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="76">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>CharacterName</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int32"/>
-      <Field occurs="32" prefixType="int16" static="false" type="utf16"/>
+      <Field type="int32">
+        <Info>
+          <Name>LocalID</Name>
+        </Info>
+      </Field>
+      <Field occurs="32" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>Name</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="77">
       <Info>
@@ -1099,12 +1536,24 @@
     </Packet>
     <Packet header="80">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>AgentAttackStatus</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="agentid"/>
-      <Field type="agentid"/>
-      <Field type="int32"/>
+      <Field type="agentid">
+        <Info>
+          <Name>Attacker</Name>
+        </Info>
+      </Field>
+      <Field type="agentid">
+        <Info>
+          <Name>Target</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Status</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="81">
       <Info>
@@ -1174,11 +1623,20 @@
     </Packet>
     <Packet header="89">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>DisabledHeroSkills</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="agentid"/>
-      <Field type="int8"/>
+      <Field type="agentid">
+        <Info>
+          <Name>AgentID</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Skills</Name>
+          <Description>bit field containing the disabled skills</Description>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="90">
       <Info>
@@ -1191,11 +1649,20 @@
     </Packet>
     <Packet header="91">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>FlagTeam</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="vec2"/>
-      <Field type="int16"/>
+      <Field type="vec2">
+        <Info>
+          <Name>Position</Name>
+          <Description>the x/y-coordinates</Description>
+        </Info>
+      </Field>
+      <Field type="int16">
+        <Info>
+          <Name>Plane</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="92">
       <Info>
@@ -1215,61 +1682,152 @@
     </Packet>
     <Packet header="94">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>RequestFile</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int32"/>
+      <Field type="int32">
+        <Info>
+          <Name>File</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="95">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>PostProcessEffect</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int8"/>
-      <Field type="int32"/>
+      <Field type="int8">
+        <Info>
+          <Name>Intensity</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Tint</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="96">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>DungeonReward</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
+      <Field type="int32">
+        <Info>
+          <Name>ExperienceEarned</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>GoldEarned</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>SkillPointsEarned</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="97">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>UpdateAgentWeapons</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="agentid"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
+      <Field type="agentid">
+        <Info>
+          <Name>AgentID</Name>
+          <Description>the agent to update</Description>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Leadhand</Name>
+          <Description>the item to equip in the leadhand</Description>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Offhand</Name>
+          <Description>the item to equip in the offhand</Description>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="98">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>UpdateFullAgentEquipment</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="agentid"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
+      <Field type="agentid">
+        <Info>
+          <Name>AgentID</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Leadhand</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Offhand</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Chest</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Feet</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Legs</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Arms</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Head</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Costume</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>CostumeHead</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="99">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>UpdateAgentEquipment</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="agentid"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
+      <Field type="agentid">
+        <Info>
+          <Name>AgentID</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Slot</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Item</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="100">
       <Info>
@@ -1287,27 +1845,76 @@
     </Packet>
     <Packet header="102">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>HeroCreate</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int16"/>
-      <Field type="agentid"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
+      <Field type="int16">
+        <Info>
+          <Name>HeroID</Name>
+        </Info>
+      </Field>
+      <Field type="agentid">
+        <Info>
+          <Name>AgentID</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>ItemStreamID</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Mode</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="103">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>HeroUpdate</Name>
+        <Description>This is used to add a hero to the pull down menu in the party window.</Description>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int16"/>
-      <Field type="int8"/>
-      <Field type="int8"/>
-      <Field type="int8"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int8"/>
-      <Field type="int8"/>
+      <Field type="int16">
+        <Info>
+          <Name>HeroID</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Level</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>PrimaryProf</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>SecondaryProf</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>NPCFile</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>ModelFile</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Data7</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>isDisabled</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="104">
       <Info>
@@ -1337,24 +1944,36 @@
     </Packet>
     <Packet header="105">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>HeroDestroy</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="agentid"/>
+      <Field type="agentid">
+        <Info>
+          <Name>AgentID</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="106">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>HeroDisable</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int16"/>
+      <Field type="int16">
+        <Info>
+          <Name>HeroID</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="107">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>HeroEnable</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int16"/>
+      <Field type="int16">
+        <Info>
+          <Name>HeroID</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="108">
       <Info>
@@ -1372,22 +1991,50 @@
     </Packet>
     <Packet header="109">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>HeroModel</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int16"/>
-      <Field type="int32"/>
+      <Field type="int16">
+        <Info>
+          <Name>HeroID</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>ModelFile</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="110">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>DisplayHelp</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int32"/>
-      <Field occurs="8" prefixType="int16" static="false" type="utf16"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
+      <Field type="int32">
+        <Info>
+          <Name>LocalID</Name>
+        </Info>
+      </Field>
+      <Field occurs="8" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>Text</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Time</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>ImageFile</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Data5</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="111">
       <Info>
@@ -1412,13 +2059,33 @@
     </Packet>
     <Packet header="114">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>DialogButton</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int8"/>
-      <Field occurs="128" prefixType="int16" static="false" type="utf16"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
+      <Field type="int8">
+        <Info>
+          <Name>Icon</Name>
+          <Description>the icon on the button</Description>
+        </Info>
+      </Field>
+      <Field occurs="128" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>Caption</Name>
+          <Description>the caption of the button. maximum size is 128 wchars</Description>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>ButtonID</Name>
+          <Description>client will send this ID to the server when the button is hit</Description>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>SkillID</Name>
+          <Description>the skill displayed if skill icon is used else its value: 0xFFFFFFFF</Description>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="115">
       <Info>
@@ -1428,55 +2095,98 @@
     </Packet>
     <Packet header="116">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>DialogBody</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field occurs="122" prefixType="int16" static="false" type="utf16"/>
+      <Field occurs="122" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>Body</Name>
+          <Description>body or part of body of the next dialog displayed. contains html like syntax. maximum size of this field is 122 wchars.</Description>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="117">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>DialogSender</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="agentid"/>
+      <Field type="agentid">
+        <Info>
+          <Name>AgentID</Name>
+          <Description>agent that "speaks" the dialog see remarks[1]</Description>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="118">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>TemporarySkill</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="agentid"/>
-      <Field type="int16"/>
+      <Field type="agentid">
+        <Info>
+          <Name>AgentID</Name>
+        </Info>
+      </Field>
+      <Field type="int16">
+        <Info>
+          <Name>SkillID</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="119">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>OpenDataWindow</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="agentid"/>
-      <Field type="int8"/>
-      <Field type="int32"/>
+      <Field type="agentid">
+        <Info>
+          <Name>Agent</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>WindowType</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Data</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="120">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>WindowItems</Name>
+        <Description>This can be used to add items to a window, such as at a material trader.</Description>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field occurs="16" prefixType="int16" static="false" type="int32"/>
+      <Field occurs="16" prefixType="int16" static="false" type="int32">
+        <Info>
+          <Name>ItemLocalIDs</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="121">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>WindowItemsEnd</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int8"/>
+      <Field type="int8">
+        <Info>
+          <Name>WindowType</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="122">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>WindowItemPricesEnd</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int8"/>
+      <Field type="int8">
+        <Info>
+          <Name>WindowType</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="123">
       <Info>
@@ -1544,39 +2254,88 @@
     </Packet>
     <Packet header="129">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>MissionMapIconAdd</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int32"/>
-      <Field type="vec2"/>
-      <Field type="int16"/>
-      <Field type="int8"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field occurs="8" prefixType="int16" static="false" type="utf16"/>
+      <Field type="int32">
+        <Info>
+          <Name>LocalID</Name>
+        </Info>
+      </Field>
+      <Field type="vec2">
+        <Info>
+          <Name>Position</Name>
+          <Description>the x/y-coordinates</Description>
+        </Info>
+      </Field>
+      <Field type="int16">
+        <Info>
+          <Name>Plane</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Color</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Data6</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>IconHash</Name>
+        </Info>
+      </Field>
+      <Field occurs="8" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>Text</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="130">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>MissionMapIconRemove</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int32"/>
+      <Field type="int32">
+        <Info>
+          <Name>LocalID</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="131">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>MissionMapIconColor</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int32"/>
-      <Field type="int8"/>
+      <Field type="int32">
+        <Info>
+          <Name>LocalID</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Color</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="132">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>MissionMapIconType</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int32"/>
-      <Field type="int32"/>
+      <Field type="int32">
+        <Info>
+          <Name>LocalID</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>IconHash</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="133">
       <Info>
@@ -1597,11 +2356,20 @@
     </Packet>
     <Packet header="135">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>AgentMinions</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="agentid"/>
-      <Field type="int32"/>
+      <Field type="agentid">
+        <Info>
+          <Name>Agent</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Amount</Name>
+          <Description>The number of minions the agent is controlling</Description>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="136">
       <Info>
@@ -1661,96 +2429,233 @@
     </Packet>
     <Packet header="142">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>AgentScale</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="agentid"/>
-      <Field type="int32"/>
+      <Field type="agentid">
+        <Info>
+          <Name>AgentID</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Scale</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="143">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>UpdateNpcName</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="agentid"/>
-      <Field occurs="32" prefixType="int16" static="false" type="utf16"/>
+      <Field type="agentid">
+        <Info>
+          <Name>AgentID</Name>
+          <Description>the agent (NPC) to assign the new name to</Description>
+        </Info>
+      </Field>
+      <Field occurs="32" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>Name</Name>
+          <Description>new name to assign to NPC</Description>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="144">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>UpdateMorale</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="agentid"/>
-      <Field type="int32"/>
+      <Field type="agentid">
+        <Info>
+          <Name>AgentID</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Morale</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="145">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>AgentExhaustion</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="agentid"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
+      <Field type="agentid">
+        <Info>
+          <Name>Agent</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Amount</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Regeneration</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="146">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>DisplayDialogue</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="agentid"/>
-      <Field occurs="32" prefixType="int16" static="false" type="utf16"/>
-      <Field type="int8"/>
-      <Field occurs="122" prefixType="int16" static="false" type="utf16"/>
+      <Field type="agentid">
+        <Info>
+          <Name>AgentID</Name>
+          <Description>The agent who is speaking.</Description>
+        </Info>
+      </Field>
+      <Field occurs="32" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>Name</Name>
+          <Description>The name that will appear in the window.</Description>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Type</Name>
+        </Info>
+      </Field>
+      <Field occurs="122" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>Text</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="147">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>UpdateGenericValue</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int32"/>
-      <Field type="agentid"/>
-      <Field type="int32"/>
+      <Field type="int32">
+        <Info>
+          <Name>ValueID</Name>
+        </Info>
+      </Field>
+      <Field type="agentid">
+        <Info>
+          <Name>AgentID</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Value</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="148">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>UpdateTargetGenericValue</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int32"/>
-      <Field type="agentid"/>
-      <Field type="agentid"/>
-      <Field type="int32"/>
+      <Field type="int32">
+        <Info>
+          <Name>ValueID</Name>
+        </Info>
+      </Field>
+      <Field type="agentid">
+        <Info>
+          <Name>Target</Name>
+        </Info>
+      </Field>
+      <Field type="agentid">
+        <Info>
+          <Name>Caster</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Value</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="149">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>PlayEffect</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="vec2"/>
-      <Field type="int16"/>
-      <Field type="agentid"/>
-      <Field type="int16"/>
-      <Field type="int8"/>
-      <Field type="int8"/>
+      <Field type="vec2">
+        <Info>
+          <Name>Position</Name>
+          <Description>the x/y-coordinates</Description>
+        </Info>
+      </Field>
+      <Field type="int16">
+        <Info>
+          <Name>Plane</Name>
+        </Info>
+      </Field>
+      <Field type="agentid">
+        <Info>
+          <Name>AgentID</Name>
+        </Info>
+      </Field>
+      <Field type="int16">
+        <Info>
+          <Name>EffectID</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Data5</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Data6</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="150">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>UpdateGenericModifier</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int32"/>
-      <Field type="agentid"/>
-      <Field type="int32"/>
+      <Field type="int32">
+        <Info>
+          <Name>ValueID</Name>
+        </Info>
+      </Field>
+      <Field type="agentid">
+        <Info>
+          <Name>AgentID</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Value</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="151">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>UpdateTargetGenericModifier</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int32"/>
-      <Field type="agentid"/>
-      <Field type="agentid"/>
-      <Field type="int32"/>
+      <Field type="int32">
+        <Info>
+          <Name>ValueID</Name>
+        </Info>
+      </Field>
+      <Field type="agentid">
+        <Info>
+          <Name>Target</Name>
+        </Info>
+      </Field>
+      <Field type="agentid">
+        <Info>
+          <Name>Caster</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Value</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="152">
       <Info>
@@ -1767,20 +2672,40 @@
     </Packet>
     <Packet header="153">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>SpeechBubble</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="agentid"/>
-      <Field occurs="122" prefixType="int16" static="false" type="utf16"/>
+      <Field type="agentid">
+        <Info>
+          <Name>AgentID</Name>
+        </Info>
+      </Field>
+      <Field occurs="122" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>Text</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="154">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>UpdatePublicProfessions</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="agentid"/>
-      <Field type="int8"/>
-      <Field type="int8"/>
+      <Field type="agentid">
+        <Info>
+          <Name>AgentID</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>PrimaryProf</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>SecondaryProf</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="155">
       <Info>
@@ -1802,20 +2727,40 @@
     </Packet>
     <Packet header="157">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>PlaySound</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="agentid"/>
-      <Field type="int32"/>
+      <Field type="agentid">
+        <Info>
+          <Name>AgentID</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>SoundFile</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="158">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>AgentAllyCreate</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="agentid"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
+      <Field type="agentid">
+        <Info>
+          <Name>Agent</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Class</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>LocalID</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="159">
       <Info>
@@ -1825,11 +2770,19 @@
     </Packet>
     <Packet header="160">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>AgentSpectate</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="agentid"/>
-      <Field type="int8"/>
+      <Field type="agentid">
+        <Info>
+          <Name>AgentID</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Target</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="161">
       <Info>
@@ -1841,11 +2794,19 @@
     </Packet>
     <Packet header="162">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>AgentChangeModel</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="agentid"/>
-      <Field type="int32"/>
+      <Field type="agentid">
+        <Info>
+          <Name>AgentID</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>NPCLocalID</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="163">
       <Info>
@@ -1872,22 +2833,50 @@
     </Packet>
     <Packet header="166">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>PetCreate</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="agentid"/>
-      <Field type="agentid"/>
-      <Field occurs="32" prefixType="int16" static="false" type="utf16"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
+      <Field type="agentid">
+        <Info>
+          <Name>Pet</Name>
+        </Info>
+      </Field>
+      <Field type="agentid">
+        <Info>
+          <Name>Owner</Name>
+        </Info>
+      </Field>
+      <Field occurs="32" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>Name</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>NPCFile</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>ModelFile</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Mode</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="167">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>PetDestroy</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="agentid"/>
+      <Field type="agentid">
+        <Info>
+          <Name>Pet</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="168">
       <Info>
@@ -1906,21 +2895,46 @@
     </Packet>
     <Packet header="170">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>AvailableProfessions</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="agentid"/>
-      <Field type="int32"/>
+      <Field type="agentid">
+        <Info>
+          <Name>AgentID</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Professions</Name>
+          <Description>bit field containing the available professions</Description>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="171">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>UpdatePrivProfessions</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="agentid"/>
-      <Field type="int8"/>
-      <Field type="int8"/>
-      <Field type="int8"/>
+      <Field type="agentid">
+        <Info>
+          <Name>AgentID</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>PrimaryProf</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>SecondaryProf</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>isPvP</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="172">
       <Info>
@@ -1930,11 +2944,19 @@
     </Packet>
     <Packet header="173">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>AddMissionGoal</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field occurs="128" prefixType="int16" static="false" type="utf16"/>
-      <Field type="int32"/>
+      <Field occurs="128" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>Goal</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Type</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="174">
       <Info>
@@ -1944,12 +2966,24 @@
     </Packet>
     <Packet header="175">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>AddMissionObjective</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field occurs="128" prefixType="int16" static="false" type="utf16"/>
+      <Field type="int32">
+        <Info>
+          <Name>Section</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Type</Name>
+        </Info>
+      </Field>
+      <Field occurs="128" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>Objective</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="176">
       <Info>
@@ -2017,18 +3051,30 @@
     </Packet>
     <Packet header="184">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>WindowOwner</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="agentid"/>
+      <Field type="agentid">
+        <Info>
+          <Name>AgentID</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="185">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>OpenCollectorWindow</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int8"/>
-      <Field occurs="122" prefixType="int16" static="false" type="utf16"/>
+      <Field type="int8">
+        <Info>
+          <Name>WindowType</Name>
+        </Info>
+      </Field>
+      <Field occurs="122" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>Text</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="186">
       <Info>
@@ -2182,23 +3228,55 @@
     </Packet>
     <Packet header="205">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>UpdateSkill</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="agentid"/>
-      <Field type="int8"/>
-      <Field type="int16"/>
-      <Field type="int32"/>
+      <Field type="agentid">
+        <Info>
+          <Name>AgentID</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Slot</Name>
+        </Info>
+      </Field>
+      <Field type="int16">
+        <Info>
+          <Name>SkillID</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>SkillInstance</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="206">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>UpdateSkillBar</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="agentid"/>
-      <Field occurs="8" prefixType="int16" static="false" type="int32"/>
-      <Field occurs="8" prefixType="int16" static="false" type="int32"/>
-      <Field type="int8"/>
+      <Field type="agentid">
+        <Info>
+          <Name>AgentID</Name>
+        </Info>
+      </Field>
+      <Field occurs="8" prefixType="int16" static="false" type="int32">
+        <Info>
+          <Name>SkillBar</Name>
+        </Info>
+      </Field>
+      <Field occurs="8" prefixType="int16" static="false" type="int32">
+        <Info>
+          <Name>SkillBarPvPMask</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Data3</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="207">
       <Info>
@@ -2240,64 +3318,141 @@
     </Packet>
     <Packet header="212">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>WindowSkills</Name>
+        <Description>This can be used to add skills to a window, such as at a skill trainer.</Description>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int8"/>
-      <Field occurs="16" prefixType="int16" static="false" type="int32"/>
+      <Field type="int8">
+        <Info>
+          <Name>Unlocked</Name>
+        </Info>
+      </Field>
+      <Field occurs="16" prefixType="int16" static="false" type="int32">
+        <Info>
+          <Name>SkillIDs</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="213">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>WindowSkillsEnd</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int8"/>
+      <Field type="int8">
+        <Info>
+          <Name>WindowType</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="214">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>SkillCancel</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="agentid"/>
-      <Field type="int16"/>
-      <Field type="int32"/>
+      <Field type="agentid">
+        <Info>
+          <Name>AgentID</Name>
+        </Info>
+      </Field>
+      <Field type="int16">
+        <Info>
+          <Name>SkillID</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>SkillInstance</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="215">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>SkillActivated</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="agentid"/>
-      <Field type="int16"/>
-      <Field type="int32"/>
+      <Field type="agentid">
+        <Info>
+          <Name>AgentID</Name>
+        </Info>
+      </Field>
+      <Field type="int16">
+        <Info>
+          <Name>SkillID</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>SkillInstance</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="216">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>SkillActivate</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="agentid"/>
-      <Field type="int16"/>
-      <Field type="int32"/>
+      <Field type="agentid">
+        <Info>
+          <Name>AgentID</Name>
+        </Info>
+      </Field>
+      <Field type="int16">
+        <Info>
+          <Name>SkillID</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>SkillInstance</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="217">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>SkillRecharge</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="agentid"/>
-      <Field type="int16"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
+      <Field type="agentid">
+        <Info>
+          <Name>AgentID</Name>
+        </Info>
+      </Field>
+      <Field type="int16">
+        <Info>
+          <Name>SkillID</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>SkillInstance</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Recharge</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="218">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>SkillRecharged</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="agentid"/>
-      <Field type="int16"/>
-      <Field type="int32"/>
+      <Field type="agentid">
+        <Info>
+          <Name>AgentID</Name>
+        </Info>
+      </Field>
+      <Field type="int16">
+        <Info>
+          <Name>SkillID</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>SkillInstance</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="219">
       <Info>
@@ -2321,84 +3476,192 @@
     </Packet>
     <Packet header="221">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>UpdateFaction</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
+      <Field type="int32">
+        <Info>
+          <Name>Experience</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>KurzickFree</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>KurzickTotal</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>LuxonFree</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>LuxonTotal</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>ImperialFree</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>ImperialTotal</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Data1</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Data2</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Level</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Morale</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>BalthFree</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>BalthTotal</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>SkillFree</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>SkillTotal</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="222">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>UpdateMaxKurzickFaction</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int32"/>
+      <Field type="int32">
+        <Info>
+          <Name>MaxFaction</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="223">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>UpdateMaxLuxonFaction</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int32"/>
+      <Field type="int32">
+        <Info>
+          <Name>MaxFaction</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="224">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>UpdateMaxBalthFaction</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int32"/>
+      <Field type="int32">
+        <Info>
+          <Name>MaxFaction</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="225">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>UpdateMaxImperialFaction</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int32"/>
+      <Field type="int32">
+        <Info>
+          <Name>MaxFaction</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="226">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>ModifyFaction</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int32"/>
-      <Field type="int32"/>
+      <Field type="int32">
+        <Info>
+          <Name>Type</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Amount</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="227">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>EquipmentDisplayStatus</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int32"/>
-      <Field type="int32"/>
+      <Field type="int32">
+        <Info>
+          <Name>DisplayPart</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>DisplayStatus</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="228">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>UpdateVitalStat</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="agentid"/>
-      <Field type="int32"/>
+      <Field type="agentid">
+        <Info>
+          <Name>AgentID</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Stats</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="229">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>UpdateVitalStat</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="agentid"/>
-      <Field type="int32"/>
+      <Field type="agentid">
+        <Info>
+          <Name>AgentID</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Stats</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="230">
       <Info>
@@ -2409,21 +3672,48 @@
     </Packet>
     <Packet header="231">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>TitleRankData</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field occurs="8" prefixType="int16" static="false" type="utf16"/>
+      <Field type="int32">
+        <Info>
+          <Name>RankId</Name>
+          <Description>Id of the rank used to refernce it</Description>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Data2</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Rank</Name>
+          <Description>the rank of the title</Description>
+        </Info>
+      </Field>
+      <Field occurs="8" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>Name</Name>
+          <Description>Name of the rank</Description>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="232">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>TitleRankDisplay</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int16"/>
-      <Field type="int32"/>
+      <Field type="int16">
+        <Info>
+          <Name>CharacterLocalID</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>RankID</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="233">
       <Info>
@@ -2435,42 +3725,108 @@
     </Packet>
     <Packet header="234">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>TitleTrackStatus</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field occurs="8" prefixType="int16" static="false" type="utf16"/>
-      <Field occurs="8" prefixType="int16" static="false" type="utf16"/>
+      <Field type="int32">
+        <Info>
+          <Name>TitleTrackId</Name>
+          <Description> id of title track</Description>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>TitleGroupId</Name>
+          <Description> 0 = no group</Description>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>CurrentPointsInTitle</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>CurrentTitleRankId</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>PointsNeededToReachCurrentRank</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>NextTitleRankId</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>PointsNeededToReachNextRank</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>MaxRank</Name>
+          <Description> max rank as value</Description>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>MaxRankId</Name>
+          <Description> id of max rank</Description>
+        </Info>
+      </Field>
+      <Field occurs="8" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>PointName</Name>
+          <Description> Name of points in title </Description>
+        </Info>
+      </Field>
+      <Field occurs="8" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>Description</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="235">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>ItemPriceQuote</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int32"/>
-      <Field type="int32"/>
+      <Field type="int32">
+        <Info>
+          <Name>ItemLocalID</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Price</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="236">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>AgentAttributeDestroy</Name>
+        <Description>This is used to destroy an agent's attribute points specified with P044_UpdateAttribPts.</Description>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="agentid"/>
+      <Field type="agentid">
+        <Info>
+          <Name>AgentID</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="237">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>ItemPrices</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field occurs="16" prefixType="int16" static="false" type="int32"/>
+      <Field occurs="16" prefixType="int16" static="false" type="int32">
+        <Info>
+          <Name>Prices</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="238">
       <Info>
@@ -2481,28 +3837,57 @@
     </Packet>
     <Packet header="239">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>VanquishReward</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int16"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
+      <Field type="int16">
+        <Info>
+          <Name>MapID</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>ExperienceEarned</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>GoldEarned</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="240">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>VanquishProgress</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int32"/>
-      <Field type="int32"/>
+      <Field type="int32">
+        <Info>
+          <Name>FoesVanquished</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>FoesRemaining</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="241">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>ReportPlayer</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field occurs="32" prefixType="int16" static="false" type="utf16"/>
-      <Field type="int8"/>
+      <Field occurs="32" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>CharacterName</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>isPvP</Name>
+          <Description>Determines whether the leeching option will be enabled</Description>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="242">
       <Info>
@@ -2532,10 +3917,14 @@
     </Packet>
     <Packet header="246">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>CinematicStart</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int8"/>
+      <Field type="int8">
+        <Info>
+          <Name>Start</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="247">
       <Info>
@@ -2555,20 +3944,24 @@
     </Packet>
     <Packet header="249">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>CinematicDataEnd</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
     </Packet>
     <Packet header="250">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>CinematicData</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field occurs="1024" prefixType="int16" static="false" type="int8"/>
+      <Field occurs="1024" prefixType="int16" static="false" type="int8">
+        <Info>
+          <Name>Data</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="251">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>CinematicEnd</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
     </Packet>
@@ -2581,14 +3974,35 @@
     </Packet>
     <Packet header="253">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>ObjectGeneral</Name>
+        <Description>This is used to setup objects such as signposts.</Description>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="agentid"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int8"/>
-      <Field occurs="32" prefixType="int16" static="false" type="utf16"/>
+      <Field type="agentid">
+        <Info>
+          <Name>LocalID</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>ModelFile</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Flag</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Scale</Name>
+        </Info>
+      </Field>
+      <Field occurs="32" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>Name</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="254">
       <Info>
@@ -2607,27 +4021,52 @@
     </Packet>
     <Packet header="256">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>ObjectDialogButton</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int8"/>
-      <Field occurs="122" prefixType="int16" static="false" type="utf16"/>
-      <Field type="int32"/>
-      <Field type="int16"/>
+      <Field type="int8">
+        <Info>
+          <Name>Icon</Name>
+        </Info>
+      </Field>
+      <Field occurs="122" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>Caption</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>ButtonID</Name>
+        </Info>
+      </Field>
+      <Field type="int16">
+        <Info>
+          <Name>SkillID</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="257">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>ObjectDialogBody</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field occurs="122" prefixType="int16" static="false" type="utf16"/>
+      <Field occurs="122" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>Body</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="258">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>ObjectDialogSender</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int32"/>
+      <Field type="int32">
+        <Info>
+          <Name>AgentID</Name>
+          <Description>the object agent ID</Description>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="259">
       <Info>
@@ -2638,20 +4077,40 @@
     </Packet>
     <Packet header="260">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>ManipulateMapObject</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int16"/>
-      <Field type="int8"/>
-      <Field type="int32"/>
+      <Field type="int16">
+        <Info>
+          <Name>ObjectID</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Action</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Frequency</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="261">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>MapObjectColor</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int16"/>
-      <Field type="int8"/>
+      <Field type="int16">
+        <Info>
+          <Name>ObjectID</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Color</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="262">
       <Info>
@@ -2704,29 +4163,64 @@
     </Packet>
     <Packet header="268">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>GuildAllyAdd</Name>
+        <Description>This is used to add guilds to the alliance tab of the guild window. The guild must first be created with P278 (or P279 for the player's guild).</Description>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int16"/>
-      <Field occurs="16" prefixType="int16" static="true" type="int8"/>
-      <Field type="int8"/>
-      <Field type="int32"/>
+      <Field type="int16">
+        <Info>
+          <Name>LocalID</Name>
+        </Info>
+      </Field>
+      <Field occurs="16" prefixType="int16" static="true" type="int8">
+        <Info>
+          <Name>GuildHallData</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Type</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>JoinDate</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="269">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>GuildAllyRemove</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field occurs="16" prefixType="int16" static="true" type="int8"/>
+      <Field occurs="16" prefixType="int16" static="true" type="int8">
+        <Info>
+          <Name>GuildHallData</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="270">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>GuildWindow</Name>
+        <Description>This can be used to apply a guild created with "P279_GuildGeneral":https://github.com/GameRevision/GWLP-R/wiki/P279_GuildGeneral to the guild window.</Description>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int16"/>
-      <Field occurs="16" prefixType="int16" static="true" type="int8"/>
-      <Field type="int8"/>
+      <Field type="int16">
+        <Info>
+          <Name>LocalID</Name>
+        </Info>
+      </Field>
+      <Field occurs="16" prefixType="int16" static="true" type="int8">
+        <Info>
+          <Name>GuildHallData</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>MemberType</Name>
+          <Description>The member type specified here will determine whether the guild window will let you invite players/guests, edit the guild announcement, etc.</Description>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="271">
       <Info>
@@ -2736,127 +4230,390 @@
     </Packet>
     <Packet header="272">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>TownAlliance</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int16"/>
-      <Field type="int8"/>
-      <Field type="int8"/>
-      <Field type="int32"/>
-      <Field occurs="32" prefixType="int16" static="false" type="utf16"/>
-      <Field occurs="6" prefixType="int16" static="false" type="utf16"/>
-      <Field type="int8"/>
-      <Field type="int8"/>
-      <Field type="int8"/>
-      <Field type="int8"/>
-      <Field type="int8"/>
-      <Field type="int16"/>
-      <Field type="int8"/>
+      <Field type="int16">
+        <Info>
+          <Name>MapID</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Data2</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Allegiance</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Faction</Name>
+        </Info>
+      </Field>
+      <Field occurs="32" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>Name</Name>
+        </Info>
+      </Field>
+      <Field occurs="6" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>Tag</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>CapeBackgroundColor</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>CapePatternColor</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>CapeEmblemColor</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>CapeShape</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>CapePattern</Name>
+        </Info>
+      </Field>
+      <Field type="int16">
+        <Info>
+          <Name>CapeEmblem</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>CapeTrim</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="273">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>FactionLine</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int32"/>
-      <Field type="int8"/>
+      <Field type="int32">
+        <Info>
+          <Name>Data1</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Position</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="274">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>GuildStreamEnd</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
     </Packet>
     <Packet header="275">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>GuildMemberType</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int8"/>
+      <Field type="int8">
+        <Info>
+          <Name>Type</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="276">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>GuildQualifierPoints</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int16"/>
-      <Field type="int32"/>
+      <Field type="int16">
+        <Info>
+          <Name>LocalID</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Amount</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="277">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>GuildHistory</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int32"/>
-      <Field occurs="64" prefixType="int16" static="false" type="utf16"/>
+      <Field type="int32">
+        <Info>
+          <Name>Date</Name>
+          <Description>The number of days since 12/31/1899</Description>
+        </Info>
+      </Field>
+      <Field occurs="64" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>Entry</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="278">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>GuildAllyGeneral</Name>
+        <Description>This can be used to setup a guild to be displayed in the alliance tab of the guild window.</Description>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int16"/>
-      <Field occurs="16" prefixType="int16" static="true" type="int8"/>
-      <Field occurs="32" prefixType="int16" static="false" type="utf16"/>
-      <Field occurs="6" prefixType="int16" static="false" type="utf16"/>
-      <Field type="int8"/>
-      <Field type="int8"/>
-      <Field type="int8"/>
-      <Field type="int8"/>
-      <Field type="int8"/>
-      <Field type="int8"/>
-      <Field type="int16"/>
-      <Field type="int8"/>
-      <Field type="int8"/>
-      <Field type="int32"/>
-      <Field type="int8"/>
+      <Field type="int16">
+        <Info>
+          <Name>LocalID</Name>
+        </Info>
+      </Field>
+      <Field occurs="16" prefixType="int16" static="true" type="int8">
+        <Info>
+          <Name>GuildHallData</Name>
+        </Info>
+      </Field>
+      <Field occurs="32" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>GuildName</Name>
+        </Info>
+      </Field>
+      <Field occurs="6" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>GuildTag</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Features</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>CapeBackgroundColor</Name>
+          <Description>1-255</Description>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>CapeDetailColor</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>CapeEmblemColor</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>CapeShape</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>CapeDetail</Name>
+        </Info>
+      </Field>
+      <Field type="int16">
+        <Info>
+          <Name>CapeEmblem</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>CapeTrim</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Allegiance</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>AllianceFaction</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Data15</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="279">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>GuildGeneral</Name>
+        <Description>This can be used to display a guild in the guild window and/or apply a cape to player agent(s).</Description>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int16"/>
-      <Field occurs="16" prefixType="int16" static="true" type="int8"/>
-      <Field occurs="32" prefixType="int16" static="false" type="utf16"/>
-      <Field occurs="6" prefixType="int16" static="false" type="utf16"/>
-      <Field type="int8"/>
-      <Field type="int8"/>
-      <Field type="int8"/>
-      <Field type="int8"/>
-      <Field type="int8"/>
-      <Field type="int8"/>
-      <Field type="int8"/>
-      <Field type="int16"/>
-      <Field type="int8"/>
-      <Field type="int8"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int8"/>
+      <Field type="int16">
+        <Info>
+          <Name>LocalID</Name>
+        </Info>
+      </Field>
+      <Field occurs="16" prefixType="int16" static="true" type="int8">
+        <Info>
+          <Name>GuildHallData</Name>
+          <Description>this is sent to the server when trying to travel to the guildhall</Description>
+        </Info>
+      </Field>
+      <Field occurs="32" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>GuildName</Name>
+        </Info>
+      </Field>
+      <Field occurs="6" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>GuildTag</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Features</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Territory</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>CapeBackgroundColor</Name>
+          <Description>1-255</Description>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>CapePatternColor</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>CapeEmblemColor</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>CapeShape</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>CapePattern</Name>
+        </Info>
+      </Field>
+      <Field type="int16">
+        <Info>
+          <Name>CapeEmblem</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>CapeTrim</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Allegiance</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>AllianceFaction</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>QualifierPoints</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Rating</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Rank</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Data19</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="280">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>GuildFaction</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int16"/>
-      <Field type="int8"/>
-      <Field type="int32"/>
+      <Field type="int16">
+        <Info>
+          <Name>LocalID</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Allegiance</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Amount</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="281">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>GuildInvite</Name>
+        <Description>This can be used to display a guild invite, alliance invite, or guild guest in the guild window.</Description>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field occurs="16" prefixType="int16" static="true" type="int8"/>
-      <Field occurs="32" prefixType="int16" static="false" type="utf16"/>
-      <Field occurs="6" prefixType="int16" static="false" type="utf16"/>
-      <Field occurs="20" prefixType="int16" static="false" type="utf16"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int8"/>
+      <Field occurs="16" prefixType="int16" static="true" type="int8">
+        <Info>
+          <Name>GuildHallData</Name>
+        </Info>
+      </Field>
+      <Field occurs="32" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>GuildName</Name>
+        </Info>
+      </Field>
+      <Field occurs="6" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>GuildTag</Name>
+        </Info>
+      </Field>
+      <Field occurs="20" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>InvitedBy</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Date</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Minutes</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Type</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="282">
       <Info>
@@ -2868,34 +4625,91 @@
     </Packet>
     <Packet header="283">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>GuildRank</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int16"/>
-      <Field type="int32"/>
+      <Field type="int16">
+        <Info>
+          <Name>LocalID</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Rank</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="284">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>GuildFeatures</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int16"/>
-      <Field type="int8"/>
+      <Field type="int16">
+        <Info>
+          <Name>LocalID</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Features</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="285">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>GuildPlayer</Name>
+        <Description>This is used to display players in the guild window. After a guild player has been created, you can send the packet again with the same primary name to update their info. (e.g set them offline)</Description>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field occurs="20" prefixType="int16" static="false" type="utf16"/>
-      <Field occurs="20" prefixType="int16" static="false" type="utf16"/>
-      <Field occurs="20" prefixType="int16" static="false" type="utf16"/>
-      <Field occurs="64" prefixType="int16" static="false" type="utf16"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int8"/>
+      <Field occurs="20" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>PrimaryName</Name>
+          <Description>The player's primary name (the one they were invited with)</Description>
+        </Info>
+      </Field>
+      <Field occurs="20" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>DisplayName</Name>
+          <Description>The player's name displayed in the guild window</Description>
+        </Info>
+      </Field>
+      <Field occurs="20" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>InvitedBy</Name>
+        </Info>
+      </Field>
+      <Field occurs="64" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>ContextInfo</Name>
+          <Description>Information displayed in the context menu when you hover over the player (such as who promoted them)</Description>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Data5</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>LastLoggedOn</Name>
+          <Description>The number of minutes since the player was last online</Description>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>JoinDate</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Status</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>MemberType</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="286">
       <Info>
@@ -2943,30 +4757,50 @@
     </Packet>
     <Packet header="292">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>GuildHallMap</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int16"/>
+      <Field type="int16">
+        <Info>
+          <Name>MapID</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="293">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>GuildAnnouncement</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field occurs="256" prefixType="int16" static="false" type="utf16"/>
-      <Field occurs="20" prefixType="int16" static="false" type="utf16"/>
+      <Field occurs="256" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>Announcement</Name>
+        </Info>
+      </Field>
+      <Field occurs="20" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>CharacterName</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="294">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>GuildRating</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int16"/>
-      <Field type="int32"/>
+      <Field type="int16">
+        <Info>
+          <Name>LocalID</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Rating</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="295">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>GuildStreamStart</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
     </Packet>
@@ -3009,39 +4843,88 @@
     </Packet>
     <Packet header="301">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>HandbookOpen</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int32"/>
-      <Field type="int32"/>
+      <Field type="int32">
+        <Info>
+          <Name>LocalID</Name>
+          <Description>The local ID of the handbook item</Description>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Data2</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="302">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>HandbookEntry</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int32"/>
-      <Field type="int8"/>
-      <Field occurs="8" prefixType="int16" static="false" type="utf16"/>
-      <Field occurs="8" prefixType="int16" static="false" type="utf16"/>
-      <Field occurs="8" prefixType="int16" static="false" type="utf16"/>
-      <Field occurs="8" prefixType="int16" static="false" type="utf16"/>
+      <Field type="int32">
+        <Info>
+          <Name>HandbookID</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Page</Name>
+        </Info>
+      </Field>
+      <Field occurs="8" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>PageName1</Name>
+        </Info>
+      </Field>
+      <Field occurs="8" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>PageName2</Name>
+        </Info>
+      </Field>
+      <Field occurs="8" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>PageText1</Name>
+        </Info>
+      </Field>
+      <Field occurs="8" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>PageText2</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="303">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>ItemQuantity</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int32"/>
-      <Field type="int32"/>
+      <Field type="int32">
+        <Info>
+          <Name>ItemLocalID</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Quantity</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="304">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>ItemOwner</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int32"/>
-      <Field occurs="32" prefixType="int16" static="false" type="utf16"/>
+      <Field type="int32">
+        <Info>
+          <Name>ItemLocalID</Name>
+        </Info>
+      </Field>
+      <Field occurs="32" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>Name</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="305">
       <Info>
@@ -3070,41 +4953,100 @@
     </Packet>
     <Packet header="308">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>ItemLocation</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int16"/>
-      <Field type="int32"/>
-      <Field type="int16"/>
-      <Field type="int8"/>
+      <Field type="int16">
+        <Info>
+          <Name>ItemStreamID</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>ItemLocalID</Name>
+        </Info>
+      </Field>
+      <Field type="int16">
+        <Info>
+          <Name>PageID</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Slot</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="309">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>CreateInventoryPage</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int16"/>
-      <Field type="int8"/>
-      <Field type="int8"/>
-      <Field type="int16"/>
-      <Field type="int8"/>
-      <Field type="int32"/>
+      <Field type="int16">
+        <Info>
+          <Name>ItemStreamID</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Type</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Storage</Name>
+        </Info>
+      </Field>
+      <Field type="int16">
+        <Info>
+          <Name>PageID</Name>
+          <Description>new defined pageId used to refer to this inventory</Description>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Slots</Name>
+          <Description>number of slots in this new inventory</Description>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>AssociatedItem</Name>
+          <Description>optional the id of the bag the inventory belongs to</Description>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="310">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>UpdateGoldOnCharacter</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int16"/>
-      <Field type="int32"/>
+      <Field type="int16">
+        <Info>
+          <Name>StreamID</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Gold</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="311">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>UpdateGoldInStorage</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int16"/>
-      <Field type="int32"/>
+      <Field type="int16">
+        <Info>
+          <Name>StreamID</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Gold</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="312">
       <Info>
@@ -3123,56 +5065,124 @@
     </Packet>
     <Packet header="314">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>ItemStreamCreate</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int16"/>
-      <Field type="int8"/>
+      <Field type="int16">
+        <Info>
+          <Name>StreamID</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>isHero</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="315">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>ItemStreamDestroy</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int16"/>
+      <Field type="int16">
+        <Info>
+          <Name>StreamID</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="316">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>EquipBag</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int16"/>
-      <Field type="int8"/>
-      <Field type="int16"/>
-      <Field type="int8"/>
-      <Field type="int32"/>
+      <Field type="int16">
+        <Info>
+          <Name>ItemStreamID</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>StorageID</Name>
+        </Info>
+      </Field>
+      <Field type="int16">
+        <Info>
+          <Name>PageID</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Slots</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>BagLocalID</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="317">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>WeaponBarItem</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int16"/>
-      <Field type="int8"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
+      <Field type="int16">
+        <Info>
+          <Name>ItemStreamID</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Slot</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>LeadHand</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>OffHand</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="318">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>UpdateActiveWeaponset</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int16"/>
-      <Field type="int8"/>
+      <Field type="int16">
+        <Info>
+          <Name>StreamID</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Slot</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="319">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>ItemPageSlots</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int16"/>
-      <Field type="int16"/>
-      <Field type="int8"/>
+      <Field type="int16">
+        <Info>
+          <Name>ItemStreamID</Name>
+        </Info>
+      </Field>
+      <Field type="int16">
+        <Info>
+          <Name>PageID</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Slots</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="320">
       <Info>
@@ -3182,13 +5192,29 @@
     </Packet>
     <Packet header="321">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>MoveItem</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int16"/>
-      <Field type="int32"/>
-      <Field type="int16"/>
-      <Field type="int8"/>
+      <Field type="int16">
+        <Info>
+          <Name>ItemStreamID</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>ItemLocalID</Name>
+        </Info>
+      </Field>
+      <Field type="int16">
+        <Info>
+          <Name>PageID</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Slot</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="322">
       <Info>
@@ -3201,27 +5227,51 @@
     </Packet>
     <Packet header="323">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>RemoveItem</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int16"/>
-      <Field type="int32"/>
+      <Field type="int16">
+        <Info>
+          <Name>ItemStreamID</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>ItemLocalID</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="324">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>UnequipBag</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int16"/>
-      <Field type="int16"/>
+      <Field type="int16">
+        <Info>
+          <Name>ItemStreamID</Name>
+        </Info>
+      </Field>
+      <Field type="int16">
+        <Info>
+          <Name>PageID</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="325">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>RemoveGoldFromCharacter</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int16"/>
-      <Field type="int32"/>
+      <Field type="int16">
+        <Info>
+          <Name>ItemStreamID</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Amount</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="326">
       <Info>
@@ -3241,39 +5291,90 @@
     </Packet>
     <Packet header="328">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>SwapItems</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int16"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
+      <Field type="int16">
+        <Info>
+          <Name>ItemStreamID</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>ItemLocalID1</Name>
+          <Description>the moved item</Description>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>ItemLocalID2</Name>
+          <Description>the item to be swapped with</Description>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="329">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>MoveBagIntoStorage</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int16"/>
-      <Field type="int32"/>
-      <Field type="int16"/>
-      <Field type="int8"/>
+      <Field type="int16">
+        <Info>
+          <Name>ItemStreamID</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>BagLocalID</Name>
+        </Info>
+      </Field>
+      <Field type="int16">
+        <Info>
+          <Name>PageID</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Slot</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="330">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>SkillTomeWindow</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int32"/>
-      <Field type="int8"/>
-      <Field type="int8"/>
+      <Field type="int32">
+        <Info>
+          <Name>ItemLocalID</Name>
+          <Description>the tome item</Description>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Profession</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>isElite</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="331">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>ItemSale</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int32"/>
-      <Field type="int32"/>
+      <Field type="int32">
+        <Info>
+          <Name>ItemLocalID</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Price</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="332">
       <Info>
@@ -3310,11 +5411,19 @@
     </Packet>
     <Packet header="336">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>ItemProfession</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int32"/>
-      <Field type="int8"/>
+      <Field type="int32">
+        <Info>
+          <Name>ItemLocalID</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Profession</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="337">
       <Info>
@@ -3350,18 +5459,54 @@
     </Packet>
     <Packet header="340">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>ArmorGeneral</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int8"/>
-      <Field type="int8"/>
-      <Field type="int16"/>
-      <Field type="int16"/>
-      <Field type="int8"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
+      <Field type="int32">
+        <Info>
+          <Name>ID</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>ArmorID</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Type</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Data4</Name>
+        </Info>
+      </Field>
+      <Field type="int16">
+        <Info>
+          <Name>DyeColor</Name>
+        </Info>
+      </Field>
+      <Field type="int16">
+        <Info>
+          <Name>Material</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Data7</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Flags</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Data9</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="341">
       <Info>
@@ -3469,11 +5614,21 @@
     </Packet>
     <Packet header="350">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>ChestItem</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int16"/>
-      <Field type="int16"/>
+      <Field type="int16">
+        <Info>
+          <Name>ItemID</Name>
+          <Description>ID of the item</Description>
+        </Info>
+      </Field>
+      <Field type="int16">
+        <Info>
+          <Name>ChestID</Name>
+          <Description>ID of the chest object</Description>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="351">
       <Info>
@@ -3667,26 +5822,46 @@
     </Packet>
     <Packet header="368">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>ColorScreenTextDisplay</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int8"/>
+      <Field type="int8">
+        <Info>
+          <Name>Color</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="369">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>ScreenTextDisplay</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
     </Packet>
     <Packet header="370">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>InstanceLoadHead</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int8"/>
-      <Field type="int8"/>
-      <Field type="int8"/>
-      <Field type="int8"/>
+      <Field type="int8">
+        <Info>
+          <Name>Data1</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Data2</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Data3</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Data4</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="371">
       <Info>
@@ -3752,13 +5927,13 @@
     </Packet>
     <Packet header="379">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>CharacterCreateHead</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
     </Packet>
     <Packet header="380">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>CharacterCreateAcknowledge</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
     </Packet>
@@ -3830,11 +6005,19 @@
     </Packet>
     <Packet header="389">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>ChallengeRecordsDisplay</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int16"/>
-      <Field type="int8"/>
+      <Field type="int16">
+        <Info>
+          <Name>Mission</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Type</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="390">
       <Info>
@@ -3845,14 +6028,35 @@
     </Packet>
     <Packet header="391">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>InstanceLoadSpawnPoint</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int32"/>
-      <Field type="vec2"/>
-      <Field type="int16"/>
-      <Field type="int8"/>
-      <Field type="int8"/>
+      <Field type="int32">
+        <Info>
+          <Name>MapFile</Name>
+        </Info>
+      </Field>
+      <Field type="vec2">
+        <Info>
+          <Name>Position</Name>
+          <Description>the x/y-coordinates</Description>
+        </Info>
+      </Field>
+      <Field type="int16">
+        <Info>
+          <Name>Plane</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Data5</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>isCinematic</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="392">
       <Info>
@@ -3879,15 +6083,39 @@
     </Packet>
     <Packet header="395">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>InstanceLoadDistrictInfo</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="agentid"/>
-      <Field type="int16"/>
-      <Field type="int8"/>
-      <Field type="int32"/>
-      <Field type="int8"/>
-      <Field type="int8"/>
+      <Field type="agentid">
+        <Info>
+          <Name>CharAgent</Name>
+        </Info>
+      </Field>
+      <Field type="int16">
+        <Info>
+          <Name>MapID</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>isExplorable</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>DistrictAndRegion</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Language</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>isObserver</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="396">
       <Info>
@@ -3929,7 +6157,7 @@
     </Packet>
     <Packet header="399">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>ObserverGamesDisplay</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
     </Packet>
@@ -4109,17 +6337,25 @@
     </Packet>
     <Packet header="416">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>ScreenTextGeneral</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field occurs="122" prefixType="int16" static="false" type="utf16"/>
+      <Field occurs="122" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>Text</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="417">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>ActiveDistrict</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int32"/>
+      <Field type="int32">
+        <Info>
+          <Name>District</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="418">
       <Info>
@@ -4132,11 +6368,19 @@
     </Packet>
     <Packet header="419">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>PartyDisplay</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int16"/>
-      <Field type="int8"/>
+      <Field type="int16">
+        <Info>
+          <Name>PartyId</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>isInviteEnabled</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="420">
       <Info>
@@ -4202,12 +6446,24 @@
     </Packet>
     <Packet header="428">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>StatusTextTimer</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int16"/>
-      <Field type="int8"/>
-      <Field occurs="122" prefixType="int16" static="false" type="utf16"/>
+      <Field type="int16">
+        <Info>
+          <Name>Time</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>hasCancel</Name>
+        </Info>
+      </Field>
+      <Field occurs="122" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>Text</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="429">
       <Info>
@@ -4225,10 +6481,14 @@
     </Packet>
     <Packet header="431">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>PartyToggleHardMode</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int8"/>
+      <Field type="int8">
+        <Info>
+          <Name>isHardModeEnabled</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="432">
       <Info>
@@ -4258,44 +6518,90 @@
     </Packet>
     <Packet header="435">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>PartyAddHero</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int16"/>
-      <Field type="int16"/>
-      <Field type="int16"/>
-      <Field type="int8"/>
-      <Field type="int8"/>
+      <Field type="int16">
+        <Info>
+          <Name>PartyId</Name>
+        </Info>
+      </Field>
+      <Field type="int16">
+        <Info>
+          <Name>CharLocalID</Name>
+        </Info>
+      </Field>
+      <Field type="int16">
+        <Info>
+          <Name>AgentID</Name>
+          <Description>hero agent</Description>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>HeroID</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Level</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="436">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>PartyRemoveHero</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int16"/>
-      <Field type="int16"/>
-      <Field type="int16"/>
+      <Field type="int16">
+        <Info>
+          <Name>PartyId</Name>
+        </Info>
+      </Field>
+      <Field type="int16">
+        <Info>
+          <Name>CharLocalID</Name>
+        </Info>
+      </Field>
+      <Field type="int16">
+        <Info>
+          <Name>AgentID</Name>
+          <Description>hero agent</Description>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="437">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>PartyInviteAdd</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int16"/>
+      <Field type="int16">
+        <Info>
+          <Name>PartyId</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="438">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>PartyJoinRequestAdd</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int16"/>
+      <Field type="int16">
+        <Info>
+          <Name>PartyId</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="439">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>PartyInviteCancel</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int16"/>
+      <Field type="int16">
+        <Info>
+          <Name>PartyId</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="440">
       <Info>
@@ -4327,12 +6633,24 @@
     </Packet>
     <Packet header="444">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>PartyMemberAdd</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int16"/>
-      <Field type="int16"/>
-      <Field type="int8"/>
+      <Field type="int16">
+        <Info>
+          <Name>PartyId</Name>
+        </Info>
+      </Field>
+      <Field type="int16">
+        <Info>
+          <Name>CharLocalID</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>isLoaded</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="445">
       <Info>
@@ -4368,41 +6686,73 @@
     </Packet>
     <Packet header="449">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>PartyMemberRemove</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int16"/>
-      <Field type="int16"/>
+      <Field type="int16">
+        <Info>
+          <Name>PartyId</Name>
+        </Info>
+      </Field>
+      <Field type="int16">
+        <Info>
+          <Name>CharLocalID</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="450">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>PartyMemberReady</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int16"/>
-      <Field type="int16"/>
-      <Field type="int8"/>
+      <Field type="int16">
+        <Info>
+          <Name>PartyId</Name>
+        </Info>
+      </Field>
+      <Field type="int16">
+        <Info>
+          <Name>CharLocalID</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>isReady</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="451">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>PartyCreate</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int16"/>
+      <Field type="int16">
+        <Info>
+          <Name>PartyId</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="452">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>PartyMembersEnd</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int16"/>
+      <Field type="int16">
+        <Info>
+          <Name>PartyId</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="453">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>AlertBox</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field occurs="122" prefixType="int16" static="false" type="utf16"/>
+      <Field occurs="122" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>Text</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="454">
       <Info>
@@ -4412,10 +6762,15 @@
     </Packet>
     <Packet header="455">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>InformationChat</Name>
+        <Description>Will display text of hard coded string IDs in the chat box</Description>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int8"/>
+      <Field type="int8">
+        <Info>
+          <Name>Text</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="456">
       <Info>
@@ -4431,18 +6786,30 @@
     </Packet>
     <Packet header="457">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>PartyDefeated</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
     </Packet>
     <Packet header="458">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>StatusText</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int8"/>
-      <Field type="int8"/>
-      <Field occurs="122" prefixType="int16" static="false" type="utf16"/>
+      <Field type="int8">
+        <Info>
+          <Name>Show</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>hasCancel</Name>
+        </Info>
+      </Field>
+      <Field occurs="122" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>Text</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="459">
       <Info>
@@ -4470,68 +6837,161 @@
     </Packet>
     <Packet header="462">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>PartySearchGeneral</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int16"/>
-      <Field type="int16"/>
-      <Field type="int8"/>
-      <Field type="int8"/>
-      <Field type="int8"/>
-      <Field type="int8"/>
-      <Field type="int8"/>
-      <Field occurs="32" prefixType="int16" static="false" type="utf16"/>
-      <Field occurs="20" prefixType="int16" static="false" type="utf16"/>
-      <Field type="int8"/>
-      <Field type="int8"/>
-      <Field type="int8"/>
-      <Field type="int32"/>
+      <Field type="int16">
+        <Info>
+          <Name>LocalID</Name>
+        </Info>
+      </Field>
+      <Field type="int16">
+        <Info>
+          <Name>District</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>DistrictMatch</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>PartySize</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Heroes</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Type</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>HardMode</Name>
+        </Info>
+      </Field>
+      <Field occurs="32" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>Message</Name>
+        </Info>
+      </Field>
+      <Field occurs="20" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>CharacterName</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>PrimaryProf</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>SecondaryProf</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Level</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Data13</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="463">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>PartySearchSeek</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int16"/>
+      <Field type="int16">
+        <Info>
+          <Name>Seeking</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="464">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>PartySearchRemove</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int16"/>
+      <Field type="int16">
+        <Info>
+          <Name>LocalID</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="465">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>PartySearchSize</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int16"/>
-      <Field type="int8"/>
-      <Field type="int8"/>
+      <Field type="int16">
+        <Info>
+          <Name>LocalID</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>PartySize</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Heroes</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="466">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>PartySearchType</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int16"/>
-      <Field type="int8"/>
-      <Field type="int8"/>
+      <Field type="int16">
+        <Info>
+          <Name>LocalID</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Type</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>HardMode</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="467">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>InformationBox</Name>
+        <Description>Will display text of hard coded string IDs in an info box</Description>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int8"/>
+      <Field type="int8">
+        <Info>
+          <Name>Text</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="468">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>InfoBox</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field occurs="122" prefixType="int16" static="false" type="utf16"/>
+      <Field occurs="122" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>Text</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="469">
       <Info>
@@ -4586,10 +7046,14 @@
     </Packet>
     <Packet header="476">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>TradeInitiate</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int32"/>
+      <Field type="int32">
+        <Info>
+          <Name>CharLocalID</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="477">
       <Info>
@@ -4615,16 +7079,7 @@
         <Author>GWLPR Template Updater</Author>
       </Info>
     </Packet>
-    <Packet header="481">
-      <Info>
-        <Description>Auto generated</Description>
-        <Author>GWLPR Template Updater</Author>
-      </Info>
-      <Field type="int32"/>
-      <Field type="int32"/>
-    </Packet>
   </Direction>
-
   <Direction abbr="CtoLS" name="Client to LoginServer">
     <Packet header="0">
       <Info>
@@ -4635,11 +7090,19 @@
     </Packet>
     <Packet header="1">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>ComputerUser</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field occurs="32" prefixType="int16" static="false" type="utf16"/>
-      <Field occurs="32" prefixType="int16" static="false" type="utf16"/>
+      <Field occurs="32" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>UserName</Name>
+        </Info>
+      </Field>
+      <Field occurs="32" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>ComputerName</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="2">
       <Info>
@@ -4661,15 +7124,39 @@
     </Packet>
     <Packet header="4">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>AccountLogin</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field occurs="20" prefixType="int16" static="true" type="int8"/>
-      <Field occurs="64" prefixType="int16" static="false" type="utf16"/>
-      <Field occurs="20" prefixType="int16" static="false" type="utf16"/>
-      <Field occurs="20" prefixType="int16" static="false" type="utf16"/>
+      <Field type="int32">
+        <Info>
+          <Name>LoginCount</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Data1</Name>
+        </Info>
+      </Field>
+      <Field occurs="20" prefixType="int16" static="true" type="int8">
+        <Info>
+          <Name>Password</Name>
+        </Info>
+      </Field>
+      <Field occurs="64" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>Email</Name>
+        </Info>
+      </Field>
+      <Field occurs="20" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>Data2</Name>
+        </Info>
+      </Field>
+      <Field occurs="20" prefixType="int16" static="false" type="utf16">
+        <Info>
+          <Name>CharacterName</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="5">
       <Info>
@@ -4796,6 +7283,7 @@
         <Description>Auto generated</Description>
         <Author>GWLPR Template Updater</Author>
       </Info>
+      <Field type="int32"/>
       <Field type="int32"/>
     </Packet>
     <Packet header="20">
@@ -5001,15 +7489,39 @@
     </Packet>
     <Packet header="41">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>CharacterPlayInfo</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
+      <Field type="int32">
+        <Info>
+          <Name>LoginCount</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Data1</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>GameMapId</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Data2</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Data3</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Data4</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="42">
       <Info>
@@ -5120,10 +7632,14 @@
     </Packet>
     <Packet header="53">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>RequestResponse</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int32"/>
+      <Field type="int32">
+        <Info>
+          <Name>LoginCount</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="54">
       <Info>
@@ -5162,19 +7678,7 @@
       <Field occurs="20" prefixType="int16" static="false" type="utf16"/>
       <Field occurs="20" prefixType="int16" static="false" type="utf16"/>
     </Packet>
-    <Packet header="56">
-      <Info>
-        <Description>Auto generated</Description>
-        <Author>GWLPR Template Updater</Author>
-      </Info>
-      <Field type="int32"/>
-      <Field occurs="16" prefixType="int16" static="true" type="int8"/>
-      <Field occurs="16" prefixType="int16" static="true" type="int8"/>
-      <Field occurs="20" prefixType="int16" static="false" type="utf16"/>
-      <Field occurs="20" prefixType="int16" static="false" type="utf16"/>
-    </Packet>
   </Direction>
-
   <Direction abbr="CtoGS" name="Client to GameServer">
     <Packet header="0">
       <Info>
@@ -5579,10 +8083,15 @@
     </Packet>
     <Packet header="52">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>PressDialogButton</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int32"/>
+      <Field type="int32">
+        <Info>
+          <Name>ButtonID</Name>
+          <Description>ID of the button to press</Description>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="53">
       <Info>
@@ -5627,11 +8136,21 @@
     </Packet>
     <Packet header="58">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>ChangeSecondProfession</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="agentid"/>
-      <Field type="int8"/>
+      <Field type="agentid">
+        <Info>
+          <Name>AgentID</Name>
+          <Description>ID of agent to change (yourself or a hero)</Description>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Profession</Name>
+          <Description>ID of the profession to change to</Description>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="59">
       <Info>
@@ -5838,13 +8357,32 @@
     </Packet>
     <Packet header="84">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>ReplaceSkill</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="agentid"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
+      <Field type="agentid">
+        <Info>
+          <Name>AgentID</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>SkillSlot</Name>
+          <Description>Slot of the skill you are changing (between 0 and 7)</Description>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>SkillID</Name>
+          <Description>ID of the new skill</Description>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Unknown</Name>
+          <Description>Always 0 when called from Guild Wars, if sent as a non-zero value it seems the packet has no effect</Description>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="85">
       <Info>
@@ -5856,14 +8394,38 @@
     </Packet>
     <Packet header="86">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>SwapSkillsOnBar</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="agentid"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
-      <Field type="int32"/>
+      <Field type="agentid">
+        <Info>
+          <Name>AgentID</Name>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>SkillID1</Name>
+          <Description>ID of the skill you drag</Description>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Unknown1</Name>
+          <Description>is usually 0, but seems to be -1 or -2 if this skill appears more than once on the bar (e.g. by echo)</Description>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>SkillID2</Name>
+          <Description>ID of the skill you dropped Skill1 on</Description>
+        </Info>
+      </Field>
+      <Field type="int32">
+        <Info>
+          <Name>Unknown2</Name>
+          <Description>same as above, usually 0</Description>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="87">
       <Info>
@@ -5877,11 +8439,19 @@
     </Packet>
     <Packet header="88">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>CharacterCreateUpdateProfessionAndCampaign</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
-      <Field type="int8"/>
-      <Field type="int8"/>
+      <Field type="int8">
+        <Info>
+          <Name>Campaign</Name>
+        </Info>
+      </Field>
+      <Field type="int8">
+        <Info>
+          <Name>Profession</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="89">
       <Info>
@@ -6201,7 +8771,7 @@
     </Packet>
     <Packet header="130">
       <Info>
-        <Description>Auto generated</Description>
+        <Name>CreateNewCharacter</Name>
         <Author>GWLPR Template Updater</Author>
       </Info>
     </Packet>
@@ -6647,15 +9217,5 @@
       <Field type="int32"/>
       <Field occurs="256" prefixType="int16" static="false" type="utf16"/>
     </Packet>
-    <Packet header="192">
-      <Info>
-        <Description>Auto generated</Description>
-        <Author>GWLPR Template Updater</Author>
-      </Info>
-      <Field type="int32"/>
-      <Field type="int8"/>
-      <Field occurs="32" prefixType="int16" static="false" type="utf16"/>
-    </Packet>
   </Direction>
-
 </Packets>
