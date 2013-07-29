@@ -4,7 +4,7 @@
 
 package com.packetcodegen;
 
-import com.packetcodegen.jaxb.PacketType;
+import packetcodegen.jaxb.PacketType;
 
 /**
  * Converts the packet xml data to

@@ -4,8 +4,8 @@
 
 package com.packetcodegen;
 
-import com.packetcodegen.jaxb.PacketFieldType;
-import com.packetcodegen.jaxb.PacketSimpleTypes;
+import packetcodegen.jaxb.PacketFieldType;
+import packetcodegen.jaxb.PacketSimpleTypes;
 import java.util.ArrayList;
 
 /**

@@ -27,7 +27,14 @@
         <dependency>
             <groupId>com.realityshard</groupId>
             <artifactId>shardlet</artifactId>
-            <version>0.2.2</version>
+            <version>0.2.3</version>
+        </dependency>
+        
+        <!-- Shardlet API -->
+        <dependency>
+            <groupId>com.gamerevision.gwlpr</groupId>
+            <artifactId>actions</artifactId>
+            <version>0.2.1</version>
         </dependency>
 
         <!-- JUnit for testing -->
@@ -36,6 +43,21 @@
             <artifactId>junit</artifactId>
             <version>4.8.2</version>
             <scope>test</scope>
+        </dependency>
+        
+        <!-- CodeModel for code generation -->
+        <dependency>
+            <groupId>com.sun.codemodel</groupId>
+            <artifactId>codemodel</artifactId>
+            <version>2.6</version>
+        </dependency>
+        
+        <!-- Word-Utils to wrap a text -->
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.1</version>
+            <type>jar</type>
         </dependency>
     </dependencies>
 

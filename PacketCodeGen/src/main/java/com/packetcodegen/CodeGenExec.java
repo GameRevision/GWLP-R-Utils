@@ -4,10 +4,11 @@
 
 package com.packetcodegen;
 
-import com.packetcodegen.jaxb.CommunicationDirection;
-import com.packetcodegen.jaxb.PacketFieldType;
-import com.packetcodegen.jaxb.PacketType;
-import com.packetcodegen.jaxb.Packets;
+import packetcodegen.JaxbUtils;
+import packetcodegen.jaxb.CommunicationDirection;
+import packetcodegen.jaxb.PacketFieldType;
+import packetcodegen.jaxb.PacketType;
+import packetcodegen.jaxb.Packets;
 import java.io.File;
 import java.io.FileWriter;
 import java.util.List;

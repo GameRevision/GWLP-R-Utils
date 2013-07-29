@@ -4,7 +4,7 @@
 
 package com.packetcodegen;
 
-import com.packetcodegen.jaxb.PacketFieldType;
+import packetcodegen.jaxb.PacketFieldType;
 import java.util.List;
 
 /**

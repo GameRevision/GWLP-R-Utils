@@ -2,7 +2,7 @@
  * For copyright information see the LICENSE document.
  */
 
-package com.packetcodegen;
+package packetcodegen;
 
 import java.io.File;
 import java.io.FileInputStream;

@@ -4,7 +4,7 @@
 
 package com.packetcodegen;
 
-import com.packetcodegen.jaxb.CommunicationDirection;
+import packetcodegen.jaxb.CommunicationDirection;
 
 /**
  * Converts the packet direction xml data to
