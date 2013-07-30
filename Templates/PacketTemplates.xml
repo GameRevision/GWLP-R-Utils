@@ -555,7 +555,7 @@
       </Field>
       <Field type="int32">
         <Info>
-          <Name>Class</Name>
+          <Name>AgentClass</Name>
         </Info>
       </Field>
     </Packet>
@@ -2105,7 +2105,7 @@
       </Field>
       <Field type="int32">
         <Info>
-          <Name>Class</Name>
+          <Name>AgentClass</Name>
         </Info>
       </Field>
       <Field type="int32">

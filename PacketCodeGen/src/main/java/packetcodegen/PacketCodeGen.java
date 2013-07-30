@@ -118,7 +118,7 @@ public final class PacketCodeGen
         String packetNamePrefixed = "P" + String.format("%03d", packet.getHeader()) + "_" + packetName;
         String packetDescription =  (packet.getInfo() == null || packet.getInfo().getDescription() == null || packet.getInfo().getDescription().isEmpty()) ? "" : WordUtils.wrap(packet.getInfo().getDescription(), /* maximumLength */50);
         
-        JDefinedClass packetClass = dirPackage._class(JMod.FINAL | JMod.PUBLIC, packetNamePrefixed)._implements(GenericAction.class);
+        JDefinedClass packetClass = dirPackage._class(JMod.FINAL | JMod.PUBLIC, packetNamePrefixed)._extends(GenericAction.class);
 
         LOGGER.info("+-Processing packet: {}", packetNamePrefixed);
         LOGGER.debug("|+-Packet description: {}", packetDescription);
@@ -156,14 +156,13 @@ public final class PacketCodeGen
             throws JClassAlreadyExistsException 
     {
         boolean isNested = field.getType().equals(PacketSimpleTypes.NESTED);
-        boolean isArray = field.getOccurs() != null;
+        boolean isArray = (field.getOccurs() != null) && (field.getType() != PacketSimpleTypes.UTF_16);
 
         // TODO: make the fields mandatory
         String name = field.getInfo() == null || field.getInfo().getName() == null ? "Unknown" + numberOfUnknowns.incrementAndGet() : field.getInfo().getName();
         String fieldName = WordUtils.uncapitalize(name);
 
         JType fieldType = null;
-        Class<?> fieldClass = !isNested ? convertFieldTypeToClass(field) : null;
 
         if (isNested) 
         {
@@ -180,6 +179,7 @@ public final class PacketCodeGen
         } 
         else 
         {
+            Class<?> fieldClass = convertFieldTypeToClass(field);
             fieldType = codeModel._ref(fieldClass);
         }
 
@@ -189,11 +189,15 @@ public final class PacketCodeGen
         JFieldVar packetField = packetClass.field(JMod.PRIVATE, fieldType, fieldName);
         
         // and dont forget array annotations if necessary
-        if (isArray && (fieldClass != String.class)) 
+        if (isArray) 
         {
             boolean isConstant = field.isStatic() == null ? true : field.isStatic();
             int size = (int) (field.getOccurs() == null ? -1 : field.getOccurs());
-            packetField.annotate(IsArray.class).param("constant", isConstant).param("size", size);
+            int prefixLength = (field.getType() == PacketSimpleTypes.INT_8) ? 1 : 2;
+            packetField.annotate(IsArray.class)
+                    .param("constant", isConstant)
+                    .param("size", size)
+                    .param("prefixLength", prefixLength);
         }
     }
     
