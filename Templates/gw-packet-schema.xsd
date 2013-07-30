@@ -42,8 +42,6 @@
             <xsd:element name="Description" type="xsd:string" minOccurs="0" maxOccurs="1" />
             <!--Can be used to provide a default value-->
             <xsd:element name="DefaultVal"  type="xsd:string" minOccurs="0" maxOccurs="1" />
-            <!--Can be used to sign packets (optional ofc)-->
-            <xsd:element name="Author"      type="xsd:string" minOccurs="0" maxOccurs="1" />
         </xsd:sequence>
     </xsd:complexType>
       

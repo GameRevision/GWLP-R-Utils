@@ -94,7 +94,7 @@
                         <configuration>
                             <!--<forceRegenerate>true</forceRegenerate>-->
                             <generateDirectory>src/main/java</generateDirectory>
-                            <generatePackage>com.packetcodegen.jaxb</generatePackage>
+                            <generatePackage>packetcodegen.jaxb</generatePackage>
                             <episode>false</episode>
                         </configuration>
 
