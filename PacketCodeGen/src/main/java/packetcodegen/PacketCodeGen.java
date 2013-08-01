@@ -4,6 +4,7 @@
 
 package packetcodegen;
 
+import com.sun.codemodel.JClass;
 import org.apache.commons.lang.WordUtils;
 import com.sun.codemodel.JClassAlreadyExistsException;
 import com.sun.codemodel.JCodeModel;
@@ -16,6 +17,9 @@ import com.sun.codemodel.JMod;
 import com.sun.codemodel.JPackage;
 import com.sun.codemodel.JType;
 import gwlpr.actions.GWAction;
+import gwlpr.actions.GWActionSerializationRegistry;
+import gwlpr.actions.gameserver.GameServerActionFactory;
+import gwlpr.actions.loginserver.LoginServerActionFactory;
 import gwlpr.actions.utils.ASCIIString;
 import gwlpr.actions.utils.GUID18;
 import gwlpr.actions.utils.IsArray;
@@ -103,6 +107,17 @@ public final class PacketCodeGen
             String serverName = (prot == CommunicationDirectionTypes.L_STO_C) ||
                                 (prot == CommunicationDirectionTypes.CTO_LS) ?
                 "loginserver" : "gameserver";
+            
+            // set the factory class
+            JClass factory = null;
+            switch (prot)
+            {
+                case CTO_LS:  factory = codeModel.ref(LoginServerActionFactory.class); break;
+                case L_STO_C: factory = codeModel.ref(LoginServerActionFactory.class); break;
+                case CTO_GS:  factory = codeModel.ref(GameServerActionFactory.class); break;
+                case G_STO_C: factory = codeModel.ref(GameServerActionFactory.class); break;
+            }
+
 
             // set the new packet's package
             JPackage directionPackage = codeModel._package("gwlpr.actions." + serverName + "." + (fromClient ? "inbound" : "outbound"));
@@ -111,7 +126,7 @@ public final class PacketCodeGen
 
             for (PacketType packet : direction.getPacket()) 
             {
-                processPacket(packet, directionPackage, codeModel, fromClient);
+                processPacket(packet, directionPackage, codeModel, factory, fromClient);
             }
         }
 
@@ -124,7 +139,7 @@ public final class PacketCodeGen
     }
     
     
-    private static void processPacket(PacketType packet, JPackage dirPackage, JCodeModel codeModel, boolean fromClient) 
+    private static void processPacket(PacketType packet, JPackage dirPackage, JCodeModel codeModel, JClass factory, boolean fromClient) 
             throws JClassAlreadyExistsException
     {
         // get the packet info
@@ -159,11 +174,16 @@ public final class PacketCodeGen
                 .body()
                 ._return(JExpr.lit(packet.getHeader().intValue()));
         
-        // generate getters, setters
-        for (JFieldVar fieldVar : packetClass.fields().values())
-        {
-            processAccessors(fieldVar, packetClass);
-        }
+        // generate static constructor
+        packetClass.init()
+                .staticInvoke(factory, fromClient ? "registerInbound" : "registerOutbound")
+                .arg(JExpr.dotclass(packetClass));
+        
+//        // generate getters, setters
+//        for (JFieldVar fieldVar : packetClass.fields().values())
+//        {
+//            processAccessors(fieldVar, packetClass);
+//        }
     }
 
     
@@ -226,11 +246,11 @@ public final class PacketCodeGen
                 processField(nested, nestedClass, codeModel, numberOfUnknownsNested, fromClient);
             }
             
-            // generate getters, setters
-            for (JFieldVar fieldVar : nestedClass.fields().values())
-            {
-                processAccessors(fieldVar, nestedClass);
-            }
+//            // generate getters, setters
+//            for (JFieldVar fieldVar : nestedClass.fields().values())
+//            {
+//                processAccessors(fieldVar, nestedClass);
+//            }
             
             // nested classes are either arrays or optional...
             // meaning we will later have to test if they are null before reading/writing
@@ -245,7 +265,7 @@ public final class PacketCodeGen
         LOGGER.debug("|+-Processing field: {}, of type: {}", fieldName, fieldType);
         
         // add the field
-        JFieldVar packetField = packetClass.field(JMod.PRIVATE, fieldType, fieldName);
+        JFieldVar packetField = packetClass.field(JMod.PUBLIC, fieldType, fieldName);
         
         // and dont forget array annotations if necessary
         if (isArray) 
@@ -260,23 +280,23 @@ public final class PacketCodeGen
     }
     
     
-    private static void processAccessors(JFieldVar fieldVar, JDefinedClass packetClass)
-    {
-        String name = WordUtils.capitalize(fieldVar.name());
-        
-        {
-            String methodName = "get" + name;
-            JMethod getter = packetClass.method(JMod.PUBLIC, fieldVar.type(), methodName);
-            getter.body()._return(fieldVar);
-        } 
- 
-        {
-            String methodName = "set" + name;
-            JMethod setter = packetClass.method(JMod.PUBLIC, Void.TYPE, methodName);
-            setter.param(fieldVar.type(), fieldVar.name());
-            setter.body().assign(JExpr._this().ref(fieldVar.name()), JExpr.ref(fieldVar.name()));
-        }
-    }
+//    private static void processAccessors(JFieldVar fieldVar, JDefinedClass packetClass)
+//    {
+//        String name = WordUtils.capitalize(fieldVar.name());
+//        
+//        {
+//            String methodName = "get" + name;
+//            JMethod getter = packetClass.method(JMod.PUBLIC, fieldVar.type(), methodName);
+//            getter.body()._return(fieldVar);
+//        } 
+// 
+//        {
+//            String methodName = "set" + name;
+//            JMethod setter = packetClass.method(JMod.PUBLIC, Void.TYPE, methodName);
+//            setter.param(fieldVar.type(), fieldVar.name());
+//            setter.body().assign(JExpr._this().ref(fieldVar.name()), JExpr.ref(fieldVar.name()));
+//        }
+//    }
     
     
     private static Class<?> convertFieldTypeToClass(FieldType field) 
