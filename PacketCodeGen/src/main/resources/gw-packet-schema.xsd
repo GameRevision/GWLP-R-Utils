@@ -25,10 +25,10 @@
     <!--CommunicationDirection enumeration-->
     <xsd:simpleType name="CommunicationDirectionTypes">
         <xsd:restriction base="xsd:string">
-            <xsd:enumeration value="CtoLS" />
-            <xsd:enumeration value="LStoC" />
-            <xsd:enumeration value="CtoGS" />
-            <xsd:enumeration value="GStoC" />
+            <xsd:enumeration value="ctols" />
+            <xsd:enumeration value="lstoc" />
+            <xsd:enumeration value="ctogs" />
+            <xsd:enumeration value="gstoc" />
         </xsd:restriction>
     </xsd:simpleType>
 

@@ -101,21 +101,21 @@ public final class PacketCodeGen
             // check if we process inbound or outbounf packets and the server type
             CommunicationDirectionTypes prot = direction.getType();
             
-            boolean fromClient = (prot == CommunicationDirectionTypes.CTO_GS) ||
-                                 (prot == CommunicationDirectionTypes.CTO_LS);
+            boolean fromClient = (prot == CommunicationDirectionTypes.CTOGS) ||
+                                 (prot == CommunicationDirectionTypes.CTOLS);
 
-            String serverName = (prot == CommunicationDirectionTypes.L_STO_C) ||
-                                (prot == CommunicationDirectionTypes.CTO_LS) ?
+            String serverName = (prot == CommunicationDirectionTypes.LSTOC) ||
+                                (prot == CommunicationDirectionTypes.CTOLS) ?
                 "loginserver" : "gameserver";
             
             // set the factory class
             JClass factory = null;
             switch (prot)
             {
-                case CTO_LS:  factory = codeModel.ref(LoginServerActionFactory.class); break;
-                case L_STO_C: factory = codeModel.ref(LoginServerActionFactory.class); break;
-                case CTO_GS:  factory = codeModel.ref(GameServerActionFactory.class); break;
-                case G_STO_C: factory = codeModel.ref(GameServerActionFactory.class); break;
+                case CTOLS: factory = codeModel.ref(LoginServerActionFactory.class); break;
+                case LSTOC: factory = codeModel.ref(LoginServerActionFactory.class); break;
+                case CTOGS: factory = codeModel.ref(GameServerActionFactory.class); break;
+                case GSTOC: factory = codeModel.ref(GameServerActionFactory.class); break;
             }
 
 
@@ -174,16 +174,16 @@ public final class PacketCodeGen
                 .body()
                 ._return(JExpr.lit(packet.getHeader().intValue()));
         
-        // generate static constructor
-        packetClass.init()
-                .staticInvoke(factory, fromClient ? "registerInbound" : "registerOutbound")
-                .arg(JExpr.dotclass(packetClass));
+//        // generate static constructor
+//        packetClass.init()
+//                .staticInvoke(factory, fromClient ? "registerInbound" : "registerOutbound")
+//                .arg(JExpr.dotclass(packetClass));
         
-//        // generate getters, setters
-//        for (JFieldVar fieldVar : packetClass.fields().values())
-//        {
-//            processAccessors(fieldVar, packetClass);
-//        }
+        // generate getters, setters
+        for (JFieldVar fieldVar : packetClass.fields().values())
+        {
+            processAccessors(fieldVar, packetClass, fromClient);
+        }
     }
 
     
@@ -246,11 +246,11 @@ public final class PacketCodeGen
                 processField(nested, nestedClass, codeModel, numberOfUnknownsNested, fromClient);
             }
             
-//            // generate getters, setters
-//            for (JFieldVar fieldVar : nestedClass.fields().values())
-//            {
-//                processAccessors(fieldVar, nestedClass);
-//            }
+            // generate getters, setters
+            for (JFieldVar fieldVar : nestedClass.fields().values())
+            {
+                processAccessors(fieldVar, nestedClass, fromClient);
+            }
             
             // nested classes are either arrays or optional...
             // meaning we will later have to test if they are null before reading/writing
@@ -280,23 +280,24 @@ public final class PacketCodeGen
     }
     
     
-//    private static void processAccessors(JFieldVar fieldVar, JDefinedClass packetClass)
-//    {
-//        String name = WordUtils.capitalize(fieldVar.name());
-//        
-//        {
-//            String methodName = "get" + name;
-//            JMethod getter = packetClass.method(JMod.PUBLIC, fieldVar.type(), methodName);
-//            getter.body()._return(fieldVar);
-//        } 
-// 
-//        {
-//            String methodName = "set" + name;
-//            JMethod setter = packetClass.method(JMod.PUBLIC, Void.TYPE, methodName);
-//            setter.param(fieldVar.type(), fieldVar.name());
-//            setter.body().assign(JExpr._this().ref(fieldVar.name()), JExpr.ref(fieldVar.name()));
-//        }
-//    }
+    private static void processAccessors(JFieldVar fieldVar, JDefinedClass packetClass, boolean fromClient)
+    {
+        String name = WordUtils.capitalize(fieldVar.name());
+        
+        if (fromClient)
+        {
+            String methodName = "get" + name;
+            JMethod getter = packetClass.method(JMod.PUBLIC, fieldVar.type(), methodName);
+            getter.body()._return(fieldVar);
+        } 
+        else
+        {
+            String methodName = "set" + name;
+            JMethod setter = packetClass.method(JMod.PUBLIC, Void.TYPE, methodName);
+            setter.param(fieldVar.type(), fieldVar.name());
+            setter.body().assign(JExpr._this().ref(fieldVar.name()), JExpr.ref(fieldVar.name()));
+        }
+    }
     
     
     private static Class<?> convertFieldTypeToClass(FieldType field) 
