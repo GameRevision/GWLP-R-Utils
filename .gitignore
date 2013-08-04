@@ -11,6 +11,8 @@
 #dirs
 */.settings/*
 */target/*
+*/input/*
+*/output/*
 
 /Thumbs.db
 /Utils/PacketCodeGen/target/
