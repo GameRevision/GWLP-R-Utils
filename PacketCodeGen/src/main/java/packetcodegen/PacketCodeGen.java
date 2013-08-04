@@ -6,7 +6,7 @@ package packetcodegen;
 
 import org.apache.commons.lang.WordUtils;
 import com.sun.codemodel.*;
-import gwlpr.protocol.serialization.GWAction;
+import gwlpr.protocol.serialization.GWMessage;
 import gwlpr.protocol.util.*;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -116,7 +116,7 @@ public final class PacketCodeGen
         String packetNamePrefixed = "P" + String.format("%03d", packet.getHeader()) + "_" + packetName;
         String packetDescription =  (packet.getInfo() == null || packet.getInfo().getDescription() == null || packet.getInfo().getDescription().isEmpty()) ? "" : "\n" + WordUtils.wrap(packet.getInfo().getDescription(), /* maximumLength */50);
         
-        JDefinedClass packetClass = dirPackage._class(JMod.FINAL | JMod.PUBLIC, packetNamePrefixed)._extends(GWAction.class);
+        JDefinedClass packetClass = dirPackage._class(JMod.FINAL | JMod.PUBLIC, packetNamePrefixed)._extends(GWMessage.class);
 
         LOGGER.info("+-Processing packet: {}", packetNamePrefixed);
         LOGGER.debug("|+-Packet description: {}", packetDescription);

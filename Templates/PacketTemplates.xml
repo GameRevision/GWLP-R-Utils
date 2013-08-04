@@ -5636,8 +5636,20 @@
       <Field elements="64" type="buffer_var_big"/>
     </Packet>
     <Packet header="10">
-      <Field type="int"/>
-      <Field elements="20" type="utf16"/>
+      <Info>
+        <Name>CharacterPlayName</Name>
+        <Description>Update the character that we want to use to play</Description>
+      </Info>
+      <Field type="int">
+        <Info>
+          <Name>LoginCount</Name>
+        </Info>
+      </Field>
+      <Field elements="20" type="utf16">
+        <Info>
+          <Name>CharacterName</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="11">
       <Field type="int"/>
