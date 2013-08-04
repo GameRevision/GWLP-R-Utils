@@ -29,6 +29,12 @@
             <xsd:enumeration value="lstoc" />
             <xsd:enumeration value="ctogs" />
             <xsd:enumeration value="gstoc" />
+
+            <!--WILL BE IGNORED: (backwards compatibility)-->
+            <xsd:enumeration value="CtoLS" />
+            <xsd:enumeration value="LStoC" />
+            <xsd:enumeration value="CtoGS" />
+            <xsd:enumeration value="GStoC" />
         </xsd:restriction>
     </xsd:simpleType>
 

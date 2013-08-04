@@ -30,10 +30,10 @@
             <version>0.2.3</version>
         </dependency>
         
-        <!-- Shardlet API -->
+        <!-- Protocol API -->
         <dependency>
             <groupId>com.gamerevision.gwlpr</groupId>
-            <artifactId>actions</artifactId>
+            <artifactId>protocol</artifactId>
             <version>0.2.1</version>
         </dependency>
 

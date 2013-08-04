@@ -4,37 +4,15 @@
 
 package packetcodegen;
 
-import com.sun.codemodel.JClass;
 import org.apache.commons.lang.WordUtils;
-import com.sun.codemodel.JClassAlreadyExistsException;
-import com.sun.codemodel.JCodeModel;
-import com.sun.codemodel.JDefinedClass;
-import com.sun.codemodel.JDocComment;
-import com.sun.codemodel.JExpr;
-import com.sun.codemodel.JFieldVar;
-import com.sun.codemodel.JMethod;
-import com.sun.codemodel.JMod;
-import com.sun.codemodel.JPackage;
-import com.sun.codemodel.JType;
-import gwlpr.actions.GWAction;
-import gwlpr.actions.GWActionSerializationRegistry;
-import gwlpr.actions.gameserver.GameServerActionFactory;
-import gwlpr.actions.loginserver.LoginServerActionFactory;
-import gwlpr.actions.utils.ASCIIString;
-import gwlpr.actions.utils.GUID18;
-import gwlpr.actions.utils.IsArray;
-import gwlpr.actions.utils.NestedMarker;
-import gwlpr.actions.utils.UID16;
-import gwlpr.actions.utils.VarInt;
-import gwlpr.actions.utils.Vector2;
-import gwlpr.actions.utils.Vector3;
-import gwlpr.actions.utils.Vector4;
-import gwlpr.actions.utils.WorldPosition;
+import com.sun.codemodel.*;
+import gwlpr.protocol.serialization.GWAction;
+import gwlpr.protocol.util.*;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintStream;
-import java.math.BigInteger;
+import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicInteger;
 import javax.xml.bind.JAXBException;
 import org.slf4j.Logger;
@@ -101,32 +79,23 @@ public final class PacketCodeGen
             // check if we process inbound or outbounf packets and the server type
             CommunicationDirectionTypes prot = direction.getType();
             
-            boolean fromClient = (prot == CommunicationDirectionTypes.CTOGS) ||
-                                 (prot == CommunicationDirectionTypes.CTOLS);
+            // crappy enumeration types due to keeping backwards compatibility
+            boolean fromClient = (prot == CommunicationDirectionTypes.CTOGS) || (prot == CommunicationDirectionTypes.CTO_GS) ||
+                                 (prot == CommunicationDirectionTypes.CTOLS) || (prot == CommunicationDirectionTypes.CTO_LS);
 
-            String serverName = (prot == CommunicationDirectionTypes.LSTOC) ||
-                                (prot == CommunicationDirectionTypes.CTOLS) ?
+            String serverName = (prot == CommunicationDirectionTypes.LSTOC) || (prot == CommunicationDirectionTypes.L_STO_C) ||
+                                (prot == CommunicationDirectionTypes.CTOLS) || (prot == CommunicationDirectionTypes.CTO_LS)?
                 "loginserver" : "gameserver";
-            
-            // set the factory class
-            JClass factory = null;
-            switch (prot)
-            {
-                case CTOLS: factory = codeModel.ref(LoginServerActionFactory.class); break;
-                case LSTOC: factory = codeModel.ref(LoginServerActionFactory.class); break;
-                case CTOGS: factory = codeModel.ref(GameServerActionFactory.class); break;
-                case GSTOC: factory = codeModel.ref(GameServerActionFactory.class); break;
-            }
 
 
             // set the new packet's package
-            JPackage directionPackage = codeModel._package("gwlpr.actions." + serverName + "." + (fromClient ? "inbound" : "outbound"));
+            JPackage directionPackage = codeModel._package("gwlpr.protocol." + serverName + "." + (fromClient ? "inbound" : "outbound"));
 
             LOGGER.info("Processing packets of package: {}", directionPackage);
 
             for (PacketType packet : direction.getPacket()) 
             {
-                processPacket(packet, directionPackage, codeModel, factory, fromClient);
+                processPacket(packet, directionPackage, codeModel, fromClient);
             }
         }
 
@@ -139,7 +108,7 @@ public final class PacketCodeGen
     }
     
     
-    private static void processPacket(PacketType packet, JPackage dirPackage, JCodeModel codeModel, JClass factory, boolean fromClient) 
+    private static void processPacket(PacketType packet, JPackage dirPackage, JCodeModel codeModel, boolean fromClient) 
             throws JClassAlreadyExistsException
     {
         // get the packet info
@@ -174,16 +143,14 @@ public final class PacketCodeGen
                 .body()
                 ._return(JExpr.lit(packet.getHeader().intValue()));
         
-//        // generate static constructor
-//        packetClass.init()
-//                .staticInvoke(factory, fromClient ? "registerInbound" : "registerOutbound")
-//                .arg(JExpr.dotclass(packetClass));
-        
         // generate getters, setters
         for (JFieldVar fieldVar : packetClass.fields().values())
         {
             processAccessors(fieldVar, packetClass, fromClient);
         }
+        
+        // generate the toString method
+        processToString(packetClass, codeModel);
     }
 
     
@@ -252,6 +219,8 @@ public final class PacketCodeGen
                 processAccessors(fieldVar, nestedClass, fromClient);
             }
             
+            processToString(nestedClass, codeModel);
+            
             // nested classes are either arrays or optional...
             // meaning we will later have to test if they are null before reading/writing
             fieldType = isArray? nestedClass.array() : nestedClass;
@@ -265,7 +234,7 @@ public final class PacketCodeGen
         LOGGER.debug("|+-Processing field: {}, of type: {}", fieldName, fieldType);
         
         // add the field
-        JFieldVar packetField = packetClass.field(JMod.PUBLIC, fieldType, fieldName);
+        JFieldVar packetField = packetClass.field(JMod.PRIVATE, fieldType, fieldName);
         
         // and dont forget array annotations if necessary
         if (isArray) 
@@ -277,6 +246,11 @@ public final class PacketCodeGen
                     .param("size", size)
                     .param("prefixLength", prefixLength);
         }
+        
+        // or any special annotations
+        if (field.getType() == PacketSimpleTypes.LONG)  { packetField.annotate(IsInt64.class); }
+        if (field.getType() == PacketSimpleTypes.VARINT){ packetField.annotate(IsVarInt.class); }
+        if (field.getType() == PacketSimpleTypes.ASCII) { packetField.annotate(IsASCII.class); }
     }
     
     
@@ -300,6 +274,57 @@ public final class PacketCodeGen
     }
     
     
+    private static void processToString(JDefinedClass packetClass, JCodeModel codeModel)
+    {
+        JClass string = codeModel.ref(String.class);
+        JClass stringBuilder = codeModel.ref(StringBuilder.class);
+        JClass arrays = codeModel.ref(Arrays.class);
+        
+        JMethod toStringMeth = packetClass.method(JMod.PUBLIC, String.class, "toString");
+        toStringMeth.annotate(Override.class);
+        JBlock body = toStringMeth.body();
+        
+        JVar stringBuilderVar = body.decl(stringBuilder, "sb");
+        stringBuilderVar = stringBuilderVar.init(JExpr._new(stringBuilder).arg(packetClass.name() + "["));
+        
+        JInvocation appendChain = null;
+        
+        for (JFieldVar fieldVar : packetClass.fields().values())
+        {
+            if (appendChain != null) 
+            { 
+                // a comma is needed
+                appendChain = appendChain.invoke("append").arg("," + fieldVar.name() + "=");
+            } 
+            else 
+            {
+                appendChain = stringBuilderVar.invoke("append").arg(fieldVar.name() + "=");
+            }
+            
+            // now add the field to the toString output
+            JExpression expression = fieldVar.type().isArray() ? 
+                    arrays.staticInvoke("toString").arg(JExpr._this().ref(fieldVar.name())) :
+                        fieldVar.type().isReference() ?
+                            JExpr._this().ref(fieldVar.name()).invoke("toString") :
+                            JExpr._this().ref(fieldVar.name());
+            
+            appendChain = appendChain.invoke("append").arg(expression);
+        }
+        
+        if (appendChain != null) 
+        {
+            appendChain = appendChain.invoke("append").arg("]");
+        } 
+        else 
+        {
+            appendChain = stringBuilderVar.invoke("append").arg("]");
+        }
+
+        body.add(appendChain);
+        body._return(stringBuilderVar.invoke("toString"));
+    }
+    
+    
     private static Class<?> convertFieldTypeToClass(FieldType field) 
     {
         PacketSimpleTypes type = field.getType();
@@ -312,14 +337,14 @@ public final class PacketCodeGen
             case SHORT:             return int.class;
             case INT:               return long.class;
             case AGENTID:           return long.class;
-            case LONG:              return BigInteger.class;
+            case LONG:              return long.class;
             case FLOAT:             return float.class;
             case VEC_2:             return Vector2.class;
             case VEC_3:             return Vector3.class;
             case VEC_4:             return Vector4.class;
             case DW_3:              return WorldPosition.class;
-            case VARINT:            return VarInt.class;
-            case ASCII:             return ASCIIString.class;
+            case VARINT:            return int.class;
+            case ASCII:             return String.class;
             case UTF_16:            return String.class;
             case UID_16:            return UID16.class;
             case GUID_18:           return GUID18.class;
