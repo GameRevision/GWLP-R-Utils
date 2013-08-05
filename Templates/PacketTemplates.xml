@@ -59,11 +59,27 @@
       <Field type="int"/>
     </Packet>
     <Packet header="7">
-      <Field type="int"/>
+      <Info>
+        <Name>CharacterInfo</Name>
+      </Info>
+      <Field type="int">
+        <Info>
+          <Name>LoginCount</Name>
+        </Info>
+      </Field>
       <Field elements="16" type="buffer_static"/>
       <Field type="int"/>
-      <Field elements="20" type="utf16"/>
-      <Field elements="64" type="buffer_var_big"/>
+      <Field elements="20" type="utf16">
+        <Info>
+          <Name>CharacterName</Name>
+        </Info>
+      </Field>
+      <Field elements="64" type="buffer_var_big">
+        <Info>
+          <Name>CharacterInfo</Name>
+          <Description>Contains the last outpost, level and looks of this char.</Description>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="8">
       <Field type="int"/>
