@@ -199,7 +199,8 @@ public final class PacketCodeGen
         }
         
         String fieldName = WordUtils.uncapitalize(name);
-
+        String fieldDescription =  (field.getInfo() == null || field.getInfo().getDescription() == null || field.getInfo().getDescription().isEmpty()) ? "" : "\n" + WordUtils.wrap(field.getInfo().getDescription(), /* maximumLength */50);
+        
         JType fieldType;
 
         if (isNested) 
@@ -235,6 +236,12 @@ public final class PacketCodeGen
         
         // add the field
         JFieldVar packetField = packetClass.field(JMod.PRIVATE, fieldType, fieldName);
+        
+        if (fieldDescription != null && !fieldDescription.trim().equals(""))
+        {
+            JDocComment jDocComment = packetField.javadoc();
+            jDocComment.add(fieldDescription);
+        }
         
         // and dont forget array annotations if necessary
         if (isArray) 
