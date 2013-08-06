@@ -1142,11 +1142,30 @@
       </Field>
     </Packet>
     <Packet header="81">
-      <Field elements="122" type="utf16"/>
+      <Info>
+        <Name>ChatMessage</Name>
+      </Info>
+      <Field elements="122" type="utf16">
+        <Info>
+          <Name>FormattedMessage</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="82">
-      <Field type="short"/>
-      <Field type="byte"/>
+      <Info>
+        <Name>NoChatMessageOwner</Name>
+      </Info>
+      <Field type="short">
+        <Info>
+          <Name>Owner</Name>
+          <Description>Always zero?</Description>
+        </Info>
+      </Field>
+      <Field type="byte">
+        <Info>
+          <Name>ChatColor</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="83">
       <Field type="agentid"/>
@@ -1159,8 +1178,19 @@
       <Field elements="6" type="utf16"/>
     </Packet>
     <Packet header="85">
-      <Field type="short"/>
-      <Field type="byte"/>
+      <Info>
+        <Name>ChatMessageOwner</Name>
+      </Info>
+      <Field type="short">
+        <Info>
+          <Name>Owner</Name>
+        </Info>
+      </Field>
+      <Field type="byte">
+        <Info>
+          <Name>ChatColor</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="86">
       <Field type="agentid"/>
