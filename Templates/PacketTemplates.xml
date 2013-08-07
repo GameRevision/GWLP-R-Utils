@@ -333,9 +333,19 @@
       <Field type="int"/>
     </Packet>
     <Packet header="1">
+      <Info>
+        <Name>PingRequest</Name>
+      </Info>
     </Packet>
     <Packet header="2">
-      <Field type="int"/>
+      <Info>
+        <Name>PingReply</Name>
+      </Info>
+      <Field type="int">
+        <Info>
+          <Name>Latency</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="3">
       <Field type="int"/>
@@ -439,7 +449,15 @@
       </Field>
     </Packet>
     <Packet header="19">
-      <Field type="int"/>
+      <Info>
+        <Name>HeartBeat</Name>
+        <Description>The time passed since the last heart beat. This is to syncronize the packets arriving at the client between each heartbeat.</Description>
+      </Info>
+      <Field type="int">
+        <Info>
+          <Name>TimeDelta</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="20">
       <Field type="int"/>
@@ -513,7 +531,14 @@
       </Field>
     </Packet>
     <Packet header="23">
-      <Field type="int"/>
+      <Info>
+        <Name>FadeIntoMap</Name>
+      </Info>
+      <Field type="int">
+        <Info>
+          <Name>AgentID</Name>
+        </Info>
+      </Field>
       <Field type="int"/>
     </Packet>
     <Packet header="24">
@@ -2675,7 +2700,14 @@
       <Field type="byte"/>
     </Packet>
     <Packet header="207">
+      <Info>
+        <Name>AvailableSkills</Name>
+        <Description>The skills are basically a really large bitfield, devided into ints.</Description>
+      </Info>
       <Field elements="128" type="array_var_big">
+        <Info>
+          <Name>SkillsBitfield</Name>
+        </Info>
         <Field type="int"/>
       </Field>
     </Packet>
@@ -3011,7 +3043,15 @@
       </Field>
     </Packet>
     <Packet header="230">
-      <Field type="int"/>
+      <Info>
+        <Name>InstanceLoadAgentInfo</Name>
+      </Info>
+      <Field type="int">
+        <Info>
+          <Name>SpawnType</Name>
+          <Description>A.k.a. agent class or agent type</Description>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="231">
       <Info>
@@ -4844,6 +4884,7 @@
     <Packet header="370">
       <Info>
         <Name>InstanceLoadHead</Name>
+        <Description>First packet after handshake if its not a charcreate process. Initiates the instance load process.</Description>
       </Info>
       <Field type="byte"/>
       <Field type="byte"/>
@@ -4851,7 +4892,15 @@
       <Field type="byte"/>
     </Packet>
     <Packet header="371">
-      <Field elements="20" type="utf16"/>
+      <Info>
+        <Name>InstanceLoadCharName</Name>
+        <Description>Determines this char's name.</Description>
+      </Info>
+      <Field elements="20" type="utf16">
+        <Info>
+          <Name>CharName</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="372">
     </Packet>
@@ -4883,6 +4932,7 @@
     <Packet header="379">
       <Info>
         <Name>CharacterCreateHead</Name>
+        <Description>First packet after handshake if its not an instance load process. Initiates the char create process.</Description>
       </Info>
     </Packet>
     <Packet header="380">
@@ -4891,7 +4941,16 @@
       </Info>
     </Packet>
     <Packet header="381">
-      <Field type="int"/>
+      <Info>
+        <Name>CharacterCreateError</Name>
+        <Description>Might be send if something went wrong during char creation.</Description>
+      </Info>
+      <Field type="int">
+        <Info>
+          <Name>ErroCode</Name>
+          <Description>One of the known error codes. See the official wiki. (Or look for an errorcode enum)</Description>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="382">
       <Field type="byte"/>
@@ -6115,11 +6174,21 @@
     <Packet header="2">
     </Packet>
     <Packet header="3">
-      <Field type="int"/>
+      <Info>
+        <Name>PingReply</Name>
+      </Info>
+      <Field type="int">
+        <Info>
+          <Name>Latency</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="4">
     </Packet>
     <Packet header="5">
+      <Info>
+        <Name>PingRequest</Name>
+      </Info>
     </Packet>
     <Packet header="6">
       <Field type="agentid"/>
@@ -6328,22 +6397,66 @@
       <Field type="int"/>
     </Packet>
     <Packet header="54">
-      <Field type="vec2"/>
-      <Field type="int"/>
-      <Field type="vec2"/>
-      <Field type="int"/>
+      <Info>
+        <Name>MovementUpdate</Name>
+      </Info>
+      <Field type="vec2">
+        <Info>
+          <Name>PositionVector</Name>
+        </Info>
+      </Field>
+      <Field type="int">
+        <Info>
+          <Name>PositionPlane</Name>
+        </Info>
+      </Field>
+      <Field type="vec2">
+        <Info>
+          <Name>MoveDirection</Name>
+        </Info>
+      </Field>
+      <Field type="int">
+        <Info>
+          <Name>MovementType</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="55">
-      <Field type="vec2"/>
-      <Field type="int"/>
+      <Info>
+        <Name>GotoPostion</Name>
+        <Description>This packet requires us to find a path to the position and guide the char there.</Description>
+      </Info>
+      <Field type="vec2">
+        <Info>
+          <Name>PositionVector</Name>
+        </Info>
+      </Field>
+      <Field type="int">
+        <Info>
+          <Name>PositionPlane</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="56">
       <Field type="agentid"/>
       <Field type="byte"/>
     </Packet>
     <Packet header="57">
-      <Field type="int"/>
-      <Field type="int"/>
+      <Info>
+        <Name>RotateAgent</Name>
+      </Info>
+      <Field type="int">
+        <Info>
+          <Name>Rotation1</Name>
+          <Description>This is actually a float value.</Description>
+        </Info>
+      </Field>
+      <Field type="int">
+        <Info>
+          <Name>Rotation2</Name>
+          <Description>This is actually a float value.</Description>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="58">
       <Info>
@@ -6381,8 +6494,19 @@
       <Field type="byte"/>
     </Packet>
     <Packet header="64">
-      <Field type="vec2"/>
-      <Field type="int"/>
+      <Info>
+        <Name>MovementStop</Name>
+      </Info>
+      <Field type="vec2">
+        <Info>
+          <Name>PositionVector</Name>
+        </Info>
+      </Field>
+      <Field type="int">
+        <Info>
+          <Name>PositionPlane</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="65">
       <Field type="vec2"/>
@@ -6578,7 +6702,15 @@
     <Packet header="92">
     </Packet>
     <Packet header="93">
-      <Field elements="138" type="utf16"/>
+      <Info>
+        <Name>ChatMessage</Name>
+      </Info>
+      <Field elements="138" type="utf16">
+        <Info>
+          <Name>PrefixedMessage</Name>
+          <Description>First char is the chat channel prefix. See the chat channel enum for all available chars.</Description>
+        </Info>
+      </Field>
       <Field type="agentid"/>
     </Packet>
     <Packet header="94">
@@ -6721,6 +6853,9 @@
       <Field type="byte"/>
     </Packet>
     <Packet header="129">
+      <Info>
+        <Name>InstanceLoadRequestSpawnPoint</Name>
+      </Info>
     </Packet>
     <Packet header="130">
       <Info>
@@ -6730,8 +6865,19 @@
     <Packet header="131">
     </Packet>
     <Packet header="132">
-      <Field elements="20" type="utf16"/>
-      <Field elements="8" type="buffer_static"/>
+      <Info>
+        <Name>ValidateCreatedCharacter</Name>
+      </Info>
+      <Field elements="20" type="utf16">
+        <Info>
+          <Name>CharName</Name>
+        </Info>
+      </Field>
+      <Field elements="8" type="buffer_static">
+        <Info>
+          <Name>AppearanceAndProfession</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="133">
     </Packet>
@@ -6745,9 +6891,15 @@
     <Packet header="136">
     </Packet>
     <Packet header="137">
+      <Info>
+        <Name>InstanceLoadRequestAgentData</Name>
+      </Info>
       <Field elements="16" type="buffer_static"/>
     </Packet>
     <Packet header="138">
+      <Info>
+        <Name>InstanceLoadRequestItems</Name>
+      </Info>
       <Field type="byte"/>
       <Field type="byte"/>
     </Packet>
