@@ -445,18 +445,50 @@
       <Field type="int"/>
     </Packet>
     <Packet header="21">
-      <Field type="int"/>
-      <Field type="int"/>
+      <Info>
+        <Name>SpawnAgent</Name>
+      </Info>
+      <Field type="int">
+        <Info>
+          <Name>AgentID</Name>
+        </Info>
+      </Field>
+      <Field type="int">
+        <Info>
+          <Name>FacColorLocalID</Name>
+          <Description>This field is a composite of: (factionColor leftbitshift 24) | (localID)</Description>
+        </Info>
+      </Field>
       <Field type="byte"/>
       <Field type="byte"/>
-      <Field type="vec2"/>
-      <Field type="short"/>
-      <Field type="vec2"/>
+      <Field type="vec2">
+        <Info>
+          <Name>PositionVector</Name>
+        </Info>
+      </Field>
+      <Field type="short">
+        <Info>
+          <Name>PositionPlane</Name>
+        </Info>
+      </Field>
+      <Field type="vec2">
+        <Info>
+          <Name>DirectionRotation</Name>
+        </Info>
+      </Field>
       <Field type="byte"/>
+      <Field type="float">
+        <Info>
+          <Name>MoveSpeed</Name>
+        </Info>
+      </Field>
       <Field type="float"/>
-      <Field type="float"/>
       <Field type="int"/>
-      <Field type="int"/>
+      <Field type="int">
+        <Info>
+          <Name>SpawnType</Name>
+        </Info>
+      </Field>
       <Field type="int"/>
       <Field type="int"/>
       <Field type="int"/>
@@ -471,7 +503,7 @@
     </Packet>
     <Packet header="22">
       <Info>
-        <Name>DestroyAgent</Name>
+        <Name>DespawnAgent</Name>
       </Info>
       <Field type="int">
         <Info>
@@ -493,9 +525,24 @@
       <Field type="int"/>
     </Packet>
     <Packet header="26">
-      <Field type="int"/>
-      <Field type="vec2"/>
-      <Field type="byte"/>
+      <Info>
+        <Name>AgentMoveDirection</Name>
+      </Info>
+      <Field type="int">
+        <Info>
+          <Name>AgentID</Name>
+        </Info>
+      </Field>
+      <Field type="vec2">
+        <Info>
+          <Name>Direction</Name>
+        </Info>
+      </Field>
+      <Field type="byte">
+        <Info>
+          <Name>MovementType</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="27">
       <Field type="int"/>
@@ -507,7 +554,7 @@
       </Info>
       <Field type="int">
         <Info>
-          <Name>Agent</Name>
+          <Name>AgentID</Name>
         </Info>
       </Field>
       <Field type="float">
@@ -520,10 +567,32 @@
       <Field type="int"/>
     </Packet>
     <Packet header="30">
-      <Field type="int"/>
-      <Field type="vec2"/>
-      <Field type="short"/>
-      <Field type="short"/>
+      <Info>
+        <Name>AgentMoveToPoint</Name>
+      </Info>
+      <Field type="int">
+        <Info>
+          <Name>AgentID</Name>
+        </Info>
+      </Field>
+      <Field type="vec2">
+        <Info>
+          <Name>MoveAim</Name>
+          <Description>Absolute point in the GW coord system</Description>
+        </Info>
+      </Field>
+      <Field type="short">
+        <Info>
+          <Name>CurrentPlane</Name>
+          <Description>The plane that the agent is on</Description>
+        </Info>
+      </Field>
+      <Field type="short">
+        <Info>
+          <Name>NextPlane</Name>
+          <Description>The plane that will be next. Might be the plane that the MoveAim is in. 0 if player stays in the same plane.</Description>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="31">
       <Field type="int"/>
@@ -533,9 +602,25 @@
       <Field type="int"/>
     </Packet>
     <Packet header="32">
-      <Field type="int"/>
-      <Field type="float"/>
-      <Field type="byte"/>
+      <Info>
+        <Name>SpeedModifier</Name>
+      </Info>
+      <Field type="int">
+        <Info>
+          <Name>AgentID</Name>
+        </Info>
+      </Field>
+      <Field type="float">
+        <Info>
+          <Name>Modifier</Name>
+          <Description>Temporarily set speed modifier, as in (percentage of modification) / 100.</Description>
+        </Info>
+      </Field>
+      <Field type="byte">
+        <Info>
+          <Name>MovementType</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="33">
       <Info>
@@ -544,19 +629,18 @@
       <Field type="int">
         <Info>
           <Name>AgentID</Name>
-          <Description>the agent to update</Description>
         </Info>
       </Field>
       <Field type="vec2">
         <Info>
           <Name>Position</Name>
-          <Description>the x/y-coordinates</Description>
+          <Description>The new Positions in x/y-coordinates.</Description>
         </Info>
       </Field>
       <Field type="short">
         <Info>
           <Name>Plane</Name>
-          <Description>plane the agent ist standing on</Description>
+          <Description>Plane that the player is on when having the new position.</Description>
         </Info>
       </Field>
     </Packet>
@@ -564,9 +648,24 @@
       <Field type="int"/>
     </Packet>
     <Packet header="35">
-      <Field type="int"/>
-      <Field type="int"/>
-      <Field type="int"/>
+      <Info>
+        <Name>AgentRotate</Name>
+      </Info>
+      <Field type="int">
+        <Info>
+          <Name>Agent</Name>
+        </Info>
+      </Field>
+      <Field type="int">
+        <Info>
+          <Name>Rotation1</Name>
+        </Info>
+      </Field>
+      <Field type="int">
+        <Info>
+          <Name>Rotation2</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="36">
       <Info>
@@ -580,6 +679,7 @@
       <Field type="int">
         <Info>
           <Name>AgentClass</Name>
+          <Description>I.e. the value making this player an enemy, NPC or whatever. See wiki.</Description>
         </Info>
       </Field>
     </Packet>
@@ -1107,13 +1207,32 @@
       </Field>
     </Packet>
     <Packet header="77">
-      <Field type="int"/>
-      <Field type="agentid"/>
-      <Field type="int"/>
+      <Info>
+        <Name>UpdateAppearance</Name>
+      </Info>
+      <Field type="int">
+        <Info>
+          <Name>AgentID</Name>
+        </Info>
+      </Field>
+      <Field type="agentid">
+        <Info>
+          <Name>LocalID</Name>
+        </Info>
+      </Field>
+      <Field type="int">
+        <Info>
+          <Name>AppearanceDump</Name>
+        </Info>
+      </Field>
       <Field type="byte"/>
       <Field type="int"/>
       <Field type="int"/>
-      <Field elements="32" type="utf16"/>
+      <Field elements="32" type="utf16">
+        <Info>
+          <Name>Name</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="78">
       <Field type="int"/>
