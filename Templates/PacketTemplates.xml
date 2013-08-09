@@ -327,6 +327,18 @@
     </Packet>
     <Packet header="37">
     </Packet>
+    <Packet header="38">
+      <Info>
+        <Name>SendResponse</Name>
+        <Description>Response to P053_RequestResponse. Is usually followed by a stream terminator.</Description>
+      </Info>
+      <Field type="int">
+        <Info>
+          <Name>LoginCount</Name>
+        </Info>
+      </Field>
+      <Field type="int"/>
+    </Packet>
   </Protocol>
   <Protocol type="GStoC">
     <Packet header="0">
@@ -5058,9 +5070,16 @@
           <Name>isExplorable</Name>
         </Info>
       </Field>
-      <Field type="int">
+      <Field type="short">
         <Info>
-          <Name>DistrictAndRegion</Name>
+          <Name>DistrictNumber</Name>
+          <Description>Differs from the dumps: short + short, not int.</Description>
+        </Info>
+      </Field>
+      <Field type="short">
+        <Info>
+          <Name>Region</Name>
+          <Description>Differs from the dumps: short + short, not int.</Description>
         </Info>
       </Field>
       <Field type="byte">
