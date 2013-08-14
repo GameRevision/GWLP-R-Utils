@@ -13,6 +13,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.Arrays;
+import java.util.UUID;
 import java.util.concurrent.atomic.AtomicInteger;
 import javax.xml.bind.JAXBException;
 import org.slf4j.Logger;
@@ -353,7 +354,7 @@ public final class PacketCodeGen
             case VARINT:            return int.class;
             case ASCII:             return String.class;
             case UTF_16:            return String.class;
-            case UID_16:            return UID16.class;
+            case UID_16:            return UUID.class;
             case GUID_18:           return GUID18.class;
             case BUFFER_STATIC:     return byte[].class;
             case BUFFER_VAR_SMALL:  return byte[].class;

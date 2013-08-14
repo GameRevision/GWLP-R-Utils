@@ -67,7 +67,11 @@
           <Name>LoginCount</Name>
         </Info>
       </Field>
-      <Field elements="16" type="buffer_static"/>
+      <Field type="uid16">
+        <Info>
+          <Name>CharacterUID</Name>
+        </Info>
+      </Field>
       <Field type="int"/>
       <Field elements="20" type="utf16">
         <Info>
@@ -174,7 +178,11 @@
       </Field>
       <Field elements="8" type="buffer_static"/>
       <Field elements="8" type="buffer_static"/>
-      <Field elements="16" type="buffer_static"/>
+      <Field type="uid16">
+        <Info>
+          <Name>AccountUID</Name>
+        </Info>
+      </Field>
       <Field elements="16" type="buffer_static"/>
       <Field type="int">
         <Info>
@@ -5818,8 +5826,20 @@
       </Field>
     </Packet>
     <Packet header="2">
-      <Field type="int"/>
-      <Field elements="16" type="buffer_static"/>
+      <Info>
+        <Name>UnknownLoginState</Name>
+        <Description></Description>
+      </Info>
+      <Field type="int">
+        <Info>
+          <Name>LoginCount</Name>
+        </Info>
+      </Field>
+      <Field type="uid16">
+        <Info>
+          <Name>AccountUID</Name>
+        </Info>
+      </Field>
     </Packet>
     <Packet header="3">
       <Field type="int"/>
@@ -6183,6 +6203,32 @@
       <Field type="int"/>
       <Field elements="20" type="utf16"/>
       <Field elements="20" type="utf16"/>
+    </Packet>
+    <Packet header="56">
+      <Info>
+        <Name>PortalAccountLogin</Name>
+      </Info>
+      <Field type="int">
+        <Info>
+          <Name>LoginCount</Name>
+        </Info>
+      </Field>
+      <Field type="uid16">
+        <Info>
+          <Name>AccountUID</Name>
+        </Info>
+      </Field>
+      <Field elements="16" type="buffer_static">
+        <Info>
+          <Name>PasswordHash</Name>
+        </Info>
+      </Field>
+      <Field elements="20" type="utf16"/>
+      <Field elements="20" type="utf16">
+        <Info>
+          <Name>SecurityAnswer</Name>
+        </Info>
+      </Field>
     </Packet>
   </Protocol>
   <Protocol type="CtoGS">
